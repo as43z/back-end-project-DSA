@@ -3,11 +3,11 @@
 ## Estudiantes
 
 - Renuka Jain
-- Guillem Montejo[link](https://github.com/guillemmontejo)
-- Victor Moreno[link](https://github.com/VictorMorenoo)
-- Javier Salmeron[link](https://github.com/javiesal)
-- Albert Sáez[link](https://github.com/as43z)
-- Marc Xapeli[link](https://github.com/mxapelli)
+- [Guillem Montejo](https://github.com/guillemmontejo)
+- [Victor Moreno](https://github.com/VictorMorenoo)
+- [Javier Salmeron](https://github.com/javiesal)
+- [Albert Sáez](https://github.com/as43z)
+- [Marc Xapelli](https://github.com/mxapelli)
 
 <hr>
 
