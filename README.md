@@ -1,11 +1,13 @@
 # Back End Project DSA
 
-Estudiantes:
+## Estudiantes
+
 - Renuka Jain
-- Guillem Montejo
-- Victor Moreno
-- Javier Salmeron
-- Albert Sáez
+- Guillem Montejo[link](https://github.com/guillemmontejo)
+- Victor Moreno[link](https://github.com/VictorMorenoo)
+- Javier Salmeron[link](https://github.com/javiesal)
+- Albert Sáez[link](https://github.com/as43z)
+- Marc Xapeli[link](https://github.com/mxapelli)
 
 <hr>
 
