@@ -2,7 +2,7 @@
 
 ## Estudiantes
 
-- Renuka Jain
+- [Renuka Jain](https://github.com/renukajain)
 - [Guillem Montejo](https://github.com/guillemmontejo)
 - [Victor Moreno](https://github.com/VictorMorenoo)
 - [Javier Salmeron](https://github.com/javiesal)
