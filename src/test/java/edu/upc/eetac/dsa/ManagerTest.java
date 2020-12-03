@@ -46,4 +46,11 @@ public class ManagerTest {
         User u = this.manager.signUP("test", "test");
         Assert.assertEquals(null, this.manager.signUP("test", "test"));
     }
+
+    @Test
+    public void loginTest(){
+        this.manager.signUP("test", "test");
+        User uConn = this.manager.signIN("test", "test");
+        Assert.assertNotNull(uConn);
+    }
 }
