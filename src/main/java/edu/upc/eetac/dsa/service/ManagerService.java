@@ -79,4 +79,26 @@ public class ManagerService
         return Response.status(201).entity(u).build();
     }
 
+    @POST
+    @ApiOperation(value = "Login", notes = "Login")
+    @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "Successful", response=User.class),
+            @ApiResponse(code = 500, message = "Validation Error")
+    })
+    @Path("/Login")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response newLogin(User u) {
+        if (u.getUname() == null || u.getPswrd() == null)
+        {
+            return Response.status(400).entity(u).build();
+        }
+
+        if((this.manager.signIN(u.getUname(), u.getPswrd())) == null)
+        {
+            return Response.status(400).entity(u).build();
+        }
+        return Response.status(201).entity(u).build();
+    }
+
 }
