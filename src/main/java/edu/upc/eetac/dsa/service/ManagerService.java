@@ -21,7 +21,7 @@ import java.util.List;
 
 //Models or Element Entity
 //Swagger Imports
-@Api(value = "/manager", description = "Endpoint to User Service")
+@Api(value = "/ManagerService", description = "Endpoint to User Service")
 @Path("/ManagerService")
 public class ManagerService
 {
@@ -42,6 +42,18 @@ public class ManagerService
             this.manager.signUP("Guillem","4567");
         }
     }
+    @GET
+    @ApiOperation(value="Get all Users", notes="get all users")
+    @ApiResponses(value={
+            @ApiResponse(code = 201, message = "Successful", response = User.class, responseContainer = "List"),
+    })
+    @Path("/admin")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getUsers(){
+        List<User> users = this.manager.getUsers();
+        GenericEntity<List<User>> entity = new GenericEntity<List<User>>(users){};
+        return Response.status(201).entity(entity).build();
+    }
 
     //When multiple GET, PUT, POSTS & DELETE EXIST on the same SERVICE, path must be aggregated
     //Adds a new user given parameter (name)
@@ -51,9 +63,10 @@ public class ManagerService
             @ApiResponse(code = 201, message = "Successful", response=User.class),
             @ApiResponse(code = 500, message = "Validation Error")
     })
-    @Path("/addUser/")
+    @Path("/addUser")
+    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response newUser(User u ) {
+    public Response newUser(User u) {
         if (u.getUname() == null || u.getPswrd() == null)
         {
             return Response.status(400).entity(u).build();
