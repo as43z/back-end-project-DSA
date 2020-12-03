@@ -31,7 +31,7 @@ public class Main {
 
     // Base de la API
     // vvvvvvvvvvvvvv
-    static final String BASE_PATH = "dsaAPP/";
+    static final String BASE_PATH = "dsaApp/";
 
     // El server HTTP escuchará las peticiones que le lleguen aquí
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
@@ -48,7 +48,7 @@ public class Main {
     public static HttpServer startServer() {
         // create a resource config that scans for JAX-RS resources and providers
         // in edu.upc.dsa package
-        final ResourceConfig rc = new ResourceConfig().packages(PACKAGE_PATH + ".services");
+        final ResourceConfig rc = new ResourceConfig().packages(PACKAGE_PATH + ".service");
 
         rc.register(io.swagger.jaxrs.listing.ApiListingResource.class);
         rc.register(io.swagger.jaxrs.listing.SwaggerSerializers.class);
@@ -60,7 +60,7 @@ public class Main {
         beanConfig.setContact("albert.saez.nunez@estudiantat.upc.edu y et. al.");
         beanConfig.setDescription("API DSA");
         beanConfig.setLicenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html");
-        beanConfig.setResourcePackage(PACKAGE_PATH + ".services");
+        beanConfig.setResourcePackage(PACKAGE_PATH + ".service");
         beanConfig.setTermsOfServiceUrl("http://www.example.com/resources/eula");
         beanConfig.setTitle("REST API");
         beanConfig.setVersion("1.0.0");
