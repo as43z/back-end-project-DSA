@@ -39,16 +39,28 @@ public class ManagerImpl implements Manager{
         return new LinkedList<User>(this.userList.values());
     }
 
+    /**
+     * Funcion para loggear a un usuario.
+     * @return usuario, si se ha loggeado devolverá un usuario,
+     * si no se ha podido loggear devuelve null.
+     */
     @Override
     public User signIN(String uname, String pswrd) {
         User u = null;
 
-        //si existe en la lista, ya está registrado.
-        if (userList.get(new User(uname, pswrd)) != null) u = new User(uname, pswrd);
+        for(User uConn : userList.values()){
+            if(uConn.getUname().equals(uname)&&uConn.getPswrd().equals(pswrd))
+                u = uConn;
+        }
 
         return u;
     }
 
+    /**
+    * Funcion para registrar a un usuario.
+    * @return usuario, si se ha registrado devolverá un usuario,
+     * si no se ha podido registrar devuelve null.
+    */
     @Override
     public User signUP(String uname, String pswrd) {
         User u = null;
