@@ -39,7 +39,7 @@ public class Main {
 
     // Swagger
     // vvvvvvv
-    public static final String SWAGGER_URI = BASE_URI.replace(BASE_PATH, "swagger");
+    public static final String SWAGGER_URI = BASE_URI.replace(BASE_PATH, "swagger/");
 
     /**
      * Starts Grizzly HTTP server exposing JAX-RS resources defined in this application.

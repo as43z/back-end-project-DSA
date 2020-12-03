@@ -1,11 +1,15 @@
 package edu.upc.eetac.dsa.models;
 
+import edu.upc.eetac.dsa.utils.RandomUtils;
+
 public class User {
+    private String ID;
     private String uname;
     private String pswrd;
 
     public User(){
-        this.pswrd = "";
+        this.pswrd = RandomUtils.getRandID();
+        this.ID = RandomUtils.getRandID();
     }
 
     public User(String uname){
@@ -14,8 +18,17 @@ public class User {
     }
 
     public User(String uname, String pswrd){
+        this.ID = RandomUtils.getRandID();
         this.uname = uname;
         this.pswrd = pswrd;
+    }
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
     }
 
     public String getUname() {
