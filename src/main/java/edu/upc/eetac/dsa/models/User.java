@@ -13,6 +13,11 @@ public class User {
         this.uname = uname;
     }
 
+    public User(String uname, String pswrd){
+        this.uname = uname;
+        this.pswrd = pswrd;
+    }
+
     public String getUname() {
         return uname;
     }
