@@ -1,5 +1,4 @@
 package edu.upc.eetac.dsa;
-
 /*
 *   +--------------+
 *   |   IMPORTS    |
@@ -22,23 +21,18 @@ public class Main {
     //                      vars
     //------------------------------------------------------
     // Logger
-    // vvvvvv
     static final Logger log = Logger.getLogger(Main.class);
 
     // Base para los directorios
-    // vvvvvvvvvvvvvvvvvvvvvvvvv
     static final String PACKAGE_PATH = "edu.upc.eetac.dsa.";
 
     // Base de la API
-    // vvvvvvvvvvvvvv
     static final String BASE_PATH = "dsaApp/";
 
     // El server HTTP escuchará las peticiones que le lleguen aquí
-    // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     public static final String BASE_URI = "http://localhost:8080/" + BASE_PATH;
 
     // Swagger
-    // vvvvvvv
     public static final String SWAGGER_URI = BASE_URI.replace(BASE_PATH, "swagger/");
 
     /**
@@ -57,8 +51,8 @@ public class Main {
 
         beanConfig.setHost("localhost:8080");
         beanConfig.setBasePath(BASE_PATH);
-        beanConfig.setContact("albert.saez.nunez@estudiantat.upc.edu y et. al.");
-        beanConfig.setDescription("API DSA");
+        beanConfig.setContact("albert.saez.nunez@estudiantat.upc.edu / victor.moreno.barrera@estudiantat.upc.edu / renuka.jain@estudiantat.upc.edu / marc.xapelli@estudiantat.upc.edu / javier.salmeron@estudiantat.upc.edu / guillem.montejo@estudiantat.upc.edu .");
+        beanConfig.setDescription("API for game project");
         beanConfig.setLicenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html");
         beanConfig.setResourcePackage(PACKAGE_PATH + "service");
         beanConfig.setTermsOfServiceUrl("http://www.example.com/resources/eula");

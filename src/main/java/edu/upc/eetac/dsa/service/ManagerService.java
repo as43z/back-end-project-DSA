@@ -21,8 +21,8 @@ import java.util.List;
 
 //Models or Element Entity
 //Swagger Imports
-@Api(value = "/ManagerService", description = "Endpoint to User Service")
-@Path("/ManagerService")
+@Api(value = "/Authentication", description = "Endpoint to User Service")
+@Path("/Authentication")
 public class ManagerService
 {
     static final Logger logger = Logger.getLogger(ManagerService.class);
@@ -34,14 +34,20 @@ public class ManagerService
         PropertyConfigurator.configure("src/main/resources/log4j.properties");
         this.manager = ManagerImpl.getInstance();
 
-        if (this.manager.getUsers().size() == 0) {
+        if (this.manager.getUsers().size() == 0)
+        {
             //Adding Users
             this.manager.signUP("Albert","1234");
             this.manager.signUP("Marc","2345");
-            this.manager.signUP("Javi","3456");
+            this.manager.signUP("Javier","3456");
             this.manager.signUP("Guillem","4567");
+            this.manager.signUP("Renuka","5678");
+            this.manager.signUP("Victor","6789");
         }
     }
+
+
+    //When multiple GET, PUT, POSTS & DELETE EXIST on the same SERVICE, path must be aggregated
     @GET
     @ApiOperation(value="Get all Users", notes="get all users")
     @ApiResponses(value={
@@ -55,8 +61,8 @@ public class ManagerService
         return Response.status(201).entity(entity).build();
     }
 
-    //When multiple GET, PUT, POSTS & DELETE EXIST on the same SERVICE, path must be aggregated
-    //Adds a new user given parameter (name)
+
+    //Adds a new user
     @POST
     @ApiOperation(value = "Create a new user", notes = "Adds a new user")
     @ApiResponses(value = {
@@ -100,5 +106,4 @@ public class ManagerService
         }
         return Response.status(201).entity(u).build();
     }
-
 }

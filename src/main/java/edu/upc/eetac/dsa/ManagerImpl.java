@@ -75,7 +75,7 @@ public class ManagerImpl implements Manager{
             User u2 = null;
             for(User uConn : userList.values()){
                 if(uConn.getUname().equals(uname)){
-                    log.info("user already exist.");
+                    log.info("User already exist.");
                     u2 = uConn;
                 }
             }
