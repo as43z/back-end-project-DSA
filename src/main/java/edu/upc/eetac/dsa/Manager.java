@@ -12,4 +12,7 @@ public interface Manager {
     // gets
     public User getUser(String uname);
     public LinkedList<User> getUsers();
+
+    // teardown
+    public void tearDown();
 }

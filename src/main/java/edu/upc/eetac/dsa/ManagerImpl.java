@@ -53,13 +53,23 @@ public class ManagerImpl implements Manager{
     public User signUP(String uname, String pswrd) {
         User u = null;
 
-        if( userList.size() == 0){
+        if(userList.size() == 0){
             //si no hay usuarios añadelo
+            log.info("No users, adding one.");
             u = new User(uname, pswrd);
             userList.put(u.getID(), u);
         } else {
-            if(userList.get(new User(uname, pswrd)) == null){
-                //si el usuario no existe en la lista, añadelo
+            log.info("List already has users.");
+            User u2 = null;
+            for(User uConn : userList.values()){
+                if(uConn.getUname() == uname){
+                    log.info("user already exist.");
+                    u2 = uConn;
+                }
+            }
+
+            if(u2 == null){
+                log.info("User, does not exist. Adding User");
                 u = new User(uname, pswrd);
                 userList.put(u.getID(), u);
             }
@@ -71,5 +81,9 @@ public class ManagerImpl implements Manager{
     @Override
     public User getUser(String ID) {
         return userList.get(ID);
+    }
+
+    public void tearDown(){
+        this.userList.clear();
     }
 }
