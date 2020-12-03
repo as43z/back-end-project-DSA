@@ -89,6 +89,7 @@ public class Main {
         server.getServerConfiguration().addHttpHandler(staticHttpHandler, "/");
 
         // info
+        log.info("Greeting page @ http://localhost:8080/");
         log.info("API started @ " + BASE_URI);
         log.info("SWAGGER service @ " + SWAGGER_URI);
 
