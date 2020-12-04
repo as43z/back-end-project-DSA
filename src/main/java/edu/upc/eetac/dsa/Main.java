@@ -30,7 +30,7 @@ public class Main {
     static final String BASE_PATH = "dsaApp/";
 
     // El server HTTP escuchará las peticiones que le lleguen aquí
-    public static final String BASE_URI = "http://localhost:8080/" + BASE_PATH;
+    public static final String BASE_URI = "http://147.83.7.208/" + BASE_PATH;
 
     // Swagger
     public static final String SWAGGER_URI = BASE_URI.replace(BASE_PATH, "swagger/");
