@@ -19,8 +19,9 @@ $(document).ready(function(){
       dataType: 'json',
       data: myJSON,
       contentType: 'application/json',
-      success: function(data) {
-        alert(data)
+      success: function(x) {
+        alert(x);
+        console.log(x.ID);
       },
       error: function(xhr,resp,text){
         console.log(xhr,resp,text);
