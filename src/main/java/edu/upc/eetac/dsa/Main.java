@@ -30,7 +30,7 @@ public class Main {
     static final String BASE_PATH = "dsaApp/";
 
     // El server HTTP escuchará las peticiones que le lleguen aquí
-    public static final String BASE_URI = "http://147.83.7.208/" + BASE_PATH;
+    public static final String BASE_URI = "http://147.83.7.208:8080/" + BASE_PATH;
 
     // Swagger
     public static final String SWAGGER_URI = BASE_URI.replace(BASE_PATH, "swagger/");
@@ -49,7 +49,7 @@ public class Main {
 
         BeanConfig beanConfig = new BeanConfig();
 
-        beanConfig.setHost("147.83.7.208");
+        beanConfig.setHost("147.83.7.208:8080");
         beanConfig.setBasePath(BASE_PATH);
         beanConfig.setContact("albert.saez.nunez@estudiantat.upc.edu / victor.moreno.barrera@estudiantat.upc.edu / renuka.jain@estudiantat.upc.edu / marc.xapelli@estudiantat.upc.edu / javier.salmeron@estudiantat.upc.edu / guillem.montejo@estudiantat.upc.edu .");
         beanConfig.setDescription("API for game project");
@@ -83,7 +83,7 @@ public class Main {
         server.getServerConfiguration().addHttpHandler(staticHttpHandler, "/");
 
         // info
-        log.info("Greeting page @ http://147.83.7.208/");
+        log.info("Greeting page @ http://147.83.7.208:8080/");
         log.info("API started @ " + BASE_URI);
         log.info("SWAGGER service @ " + SWAGGER_URI);
 
