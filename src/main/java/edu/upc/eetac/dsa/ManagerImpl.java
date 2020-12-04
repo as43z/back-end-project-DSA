@@ -62,13 +62,13 @@ public class ManagerImpl implements Manager{
      * si no se ha podido registrar devuelve null.
     */
     @Override
-    public User signUP(String uname, String pswrd) {
+    public User signUP(String uname, String pswrd, String email) {
         User u = null;
 
         if(userList.size() == 0){
             //si no hay usuarios añadelo
             log.info("No users, adding one.");
-            u = new User(uname, pswrd);
+            u = new User(uname, pswrd, email);
             userList.put(u.getID(), u);
         } else {
             log.info("List already has users.");
@@ -77,12 +77,15 @@ public class ManagerImpl implements Manager{
                 if(uConn.getUname().equals(uname)){
                     log.info("User already exist.");
                     u2 = uConn;
+                } else if(uConn.getEmail().equals(email)) {
+                    log.info("User already exist.");
+                    u2 = uConn;
                 }
             }
 
             if(u2 == null){
                 log.info("User, does not exist. Adding User");
-                u = new User(uname, pswrd);
+                u = new User(uname, pswrd, email);
                 userList.put(u.getID(), u);
             }
         }

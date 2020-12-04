@@ -37,12 +37,12 @@ public class ManagerService
         if (this.manager.getUsers().size() == 0)
         {
             //Adding Users
-            this.manager.signUP("Albert","1234");
-            this.manager.signUP("Marc","2345");
-            this.manager.signUP("Javier","3456");
-            this.manager.signUP("Guillem","4567");
-            this.manager.signUP("Renuka","5678");
-            this.manager.signUP("Victor","6789");
+            this.manager.signUP("Albert","1234", "email.albert@thisemail.is.a.test.com");
+            this.manager.signUP("Marc","2345", "email.marc@thisemail.is.a.test.com");
+            this.manager.signUP("Javier","3456", "email.javi@thisemail.is.a.test.com");
+            this.manager.signUP("Guillem","4567", "email.guille@thisemail.is.a.test.com");
+            this.manager.signUP("Renuka","5678", "email.renuka@thisemail.is.a.test.com");
+            this.manager.signUP("Victor","6789", "email.victor@thisemail.is.a.test.com");
         }
     }
 
@@ -78,7 +78,7 @@ public class ManagerService
             return Response.status(400).entity(u).build();
         }
 
-        if((this.manager.signUP(u.getUname(), u.getPswrd())) == null)
+        if((this.manager.signUP(u.getUname(), u.getPswrd(), u.getEmail())) == null)
         {
             return Response.status(400).entity(u).build();
         }

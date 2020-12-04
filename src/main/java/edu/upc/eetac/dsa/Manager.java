@@ -8,7 +8,7 @@ public interface Manager {
 
     // login y register
     public User signIN(String uname, String pswrd);
-    public User signUP(String uname, String pswrd);
+    public User signUP(String uname, String pswrd, String email);
 
     // gets
     public User getUser(String uname);

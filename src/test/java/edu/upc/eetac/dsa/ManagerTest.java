@@ -31,25 +31,25 @@ public class ManagerTest {
 
     @Test
     public void addUsersTest(){
-        this.manager.signUP("test", "test");
+        this.manager.signUP("test", "test", "email");
         Assert.assertEquals(1, this.manager.getUsers().size());
     }
 
     @Test
     public void checkExistTest(){
-        User u = this.manager.signUP("test", "test");
+        User u = this.manager.signUP("test", "test", "email");
         Assert.assertEquals(u.getID(), this.manager.getUsers().get(0).getID());
     }
 
     @Test
     public void doubleRegisterTest(){
-        User u = this.manager.signUP("test", "test");
-        Assert.assertEquals(null, this.manager.signUP("test", "test"));
+        User u = this.manager.signUP("test", "test", "email");
+        Assert.assertEquals(null, this.manager.signUP("test", "test", "email"));
     }
 
     @Test
     public void loginTest(){
-        this.manager.signUP("test", "test");
+        this.manager.signUP("test", "test", "email");
         User uConn = this.manager.signIN("test", "test");
         Assert.assertNotNull(uConn);
     }
