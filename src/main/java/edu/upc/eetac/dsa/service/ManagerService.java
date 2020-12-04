@@ -58,7 +58,7 @@ public class ManagerService
     public Response getUsers(){
         List<User> users = this.manager.getUsers();
         GenericEntity<List<User>> entity = new GenericEntity<List<User>>(users){};
-        return Response.status(201).entity(entity).build();
+        return Response.status(201).entity(entity).header("Access-Control-Allow-Origin", "*").build();
     }
 
 
@@ -75,14 +75,14 @@ public class ManagerService
     public Response newUser(User u) {
         if (u.getUname() == null || u.getPswrd() == null)
         {
-            return Response.status(400).entity(u).build();
+            return Response.status(400).entity(u).header("Access-Control-Allow-Origin", "*").build();
         }
 
         if((this.manager.signUP(u.getUname(), u.getPswrd(), u.getEmail())) == null)
         {
-            return Response.status(400).entity(u).build();
+            return Response.status(400).entity(u).header("Access-Control-Allow-Origin", "*").build();
         }
-        return Response.status(201).entity(u).build();
+        return Response.status(201).entity(u).header("Access-Control-Allow-Origin", "*").build();
     }
 
     @POST
@@ -97,13 +97,13 @@ public class ManagerService
     public Response newLogin(User u) {
         if (u.getUname() == null || u.getPswrd() == null)
         {
-            return Response.status(400).entity(u).build();
+            return Response.status(400).entity(u).header("Access-Control-Allow-Origin", "*").build();
         }
 
         if((this.manager.signIN(u.getUname(), u.getPswrd())) == null)
         {
-            return Response.status(400).entity(u).build();
+            return Response.status(400).entity(u).header("Access-Control-Allow-Origin", "*").build();
         }
-        return Response.status(201).entity(u).build();
+        return Response.status(201).entity(u).header("Access-Control-Allow-Origin", "*").build();
     }
 }
