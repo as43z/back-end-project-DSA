@@ -49,7 +49,7 @@ public class Main {
 
         BeanConfig beanConfig = new BeanConfig();
 
-        beanConfig.setHost("localhost:8080");
+        beanConfig.setHost("147.83.7.208");
         beanConfig.setBasePath(BASE_PATH);
         beanConfig.setContact("albert.saez.nunez@estudiantat.upc.edu / victor.moreno.barrera@estudiantat.upc.edu / renuka.jain@estudiantat.upc.edu / marc.xapelli@estudiantat.upc.edu / javier.salmeron@estudiantat.upc.edu / guillem.montejo@estudiantat.upc.edu .");
         beanConfig.setDescription("API for game project");
@@ -83,7 +83,7 @@ public class Main {
         server.getServerConfiguration().addHttpHandler(staticHttpHandler, "/");
 
         // info
-        log.info("Greeting page @ http://localhost:8080/");
+        log.info("Greeting page @ http://147.83.7.208/");
         log.info("API started @ " + BASE_URI);
         log.info("SWAGGER service @ " + SWAGGER_URI);
 
