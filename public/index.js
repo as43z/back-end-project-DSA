@@ -20,8 +20,8 @@ $(document).ready(function(){
       data: myJSON,
       contentType: 'application/json',
       success: function(x) {
-        alert(x);
-        console.log(x.ID);
+        console.log(x.uname);
+        console.log(x.pswrd);
       },
       error: function(xhr,resp,text){
         console.log(xhr,resp,text);
