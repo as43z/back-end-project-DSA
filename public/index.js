@@ -3,7 +3,7 @@ $(document).ready(function(){
     window.location.replace("register.html")
   });
 
-  $('#login_form').on('submit', function(event) {
+  $('#btnLogIn').click(function() {
     event.preventDefault();
     /*const json = serialize_form(this);*/
     const user = $("#inputUser").val();
