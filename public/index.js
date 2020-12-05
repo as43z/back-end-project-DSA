@@ -22,9 +22,11 @@ $(document).ready(function(){
       success: function(x) {
         console.log(x.uname);
         console.log(x.pswrd);
+        alert("Logging in as: " + x.uname);
       },
       error: function(xhr,resp,text){
         console.log(xhr,resp,text);
+        alert("There is a problem. You are not able to log in");
       }
     });
   });

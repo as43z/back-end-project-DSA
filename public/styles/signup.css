@@ -21,32 +21,32 @@ body {
   margin-bottom: 40px;
 }
 
-.form-signin {
+.form-signup {
   width: 100%;
   max-width: 330px;
   padding: 15px;
   margin: 10 auto;
 }
 
-.form-signin .form-control {
+.form-signup .form-control {
   position: relative;
   box-sizing: border-box;
   height: auto;
   padding: 10px;
   font-size: 16px;
 }
-.form-signin .form-control:focus {
+.form-signup .form-control:focus {
   z-index: 2;
 }
-.form-signin input[type="email"] {
+.form-signup input[type="email"] {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.form-signin input[type="label"]{
+.form-signup input[type="label"]{
   margin-top: 50px;
   margin-bottom: -1px;
 
 }
-.form-signin input[type="password"] {
+.form-signup input[type="password"] {
   margin-bottom: 40px;
 }

@@ -40,7 +40,7 @@ public class ManagerService
             this.manager.signUP("Albert","1234", "email.albert@thisemail.is.a.test.com");
             this.manager.signUP("Marc","2345", "email.marc@thisemail.is.a.test.com");
             this.manager.signUP("Javier","3456", "email.javi@thisemail.is.a.test.com");
-            this.manager.signUP("Guillem","4567", "email.guille@thisemail.is.a.test.com");
+            this.manager.signUP("Guille","4567", "email.guille@thisemail.is.a.test.com");
             this.manager.signUP("Renuka","5678", "email.renuka@thisemail.is.a.test.com");
             this.manager.signUP("Victor","6789", "email.victor@thisemail.is.a.test.com");
         }
