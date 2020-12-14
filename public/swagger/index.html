@@ -37,10 +37,9 @@
     <script src="./swagger-ui-standalone-preset.js"> </script>
     <script>
     window.onload = function() {
-      var ip = "localhost"
       // Build a system
       const ui = SwaggerUIBundle({
-        url: "http://" + ip + ":8080/dsaApp/swagger.json",
+        url: "/dsaApp/swagger.json",
         dom_id: '#swagger-ui',
         deepLinking: true,
         presets: [
