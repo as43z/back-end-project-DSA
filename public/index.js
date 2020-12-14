@@ -15,7 +15,7 @@ $(document).ready(function(){
     $.ajax({
       type: 'POST',
       headers: {"Access-Control-Allow-Origin": "*"},
-      url: 'http://147.83.7.208:8080/dsaApp/Authentication/Login',
+      url: '/dsaApp/Authentication/Login',
       dataType: 'json',
       data: myJSON,
       contentType: 'application/json',
