@@ -1,4 +1,4 @@
 $(document).ready(function(){
   let userName = sessionStorage.getItem('Nombre');
-  $("#user").html(userName);
+  $("h5").html(userName);
 });
