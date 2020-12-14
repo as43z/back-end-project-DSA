@@ -23,6 +23,10 @@ $(document).ready(function(){
         console.log(x.uname);
         console.log(x.pswrd);
         alert("Logging in as: " + x.uname);
+        sessionStorage.setItem('Nombre', x.uname);
+        let firstName = sessionStorage.getItem('Nombre');
+        console.log("Hola, en sessionStorage está " + firstName);
+        window.location.replace("principal.html");
       },
       error: function(xhr,resp,text){
         console.log(xhr,resp,text);
