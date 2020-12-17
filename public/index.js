@@ -26,7 +26,7 @@ $(document).ready(function(){
         sessionStorage.setItem('Nombre', x.uname);
         let firstName = sessionStorage.getItem('Nombre');
         console.log("Hola, en sessionStorage está " + firstName);
-        window.location.replace("principal.html");
+        window.location.replace("mainmenu.html");
       },
       error: function(xhr,resp,text){
         console.log(xhr,resp,text);
