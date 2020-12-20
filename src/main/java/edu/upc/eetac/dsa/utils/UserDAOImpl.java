@@ -1,18 +1,20 @@
 package edu.upc.eetac.dsa.utils;
 
 import edu.upc.eetac.dsa.models.User;
+import edu.upc.eetac.dsa.*;
 import java.util.HashMap;
 import java.util.List;
 
 public class UserDAOImpl implements UserDAO
+
 {
-    public int addUser(String name, String surname, double salary) {
+    public int addUser(String ID, String uname, String pswrd, String email) {
         Session session = null;
-        int employeeID = 0;
+        int userID = 0;
         try {
             session = FactorySession.openSession();
-            User employee = new User(name, surname, salary);
-            session.save(employee);
+            User u = new User(ID, uname, pswrd, email);
+            session.save(u);
         }
         catch (Exception e) {
             // LOG
@@ -21,16 +23,16 @@ public class UserDAOImpl implements UserDAO
             session.close();
         }
 
-        return employeeID;
+        return userID;
     }
 
 
-    public User getUser(int employeeID) {
+    public User getUser(int userID) {
         Session session = null;
-        Employee employee = null;
+        User u = null;
         try {
             session = FactorySession.openSession();
-            employee = (User)session.get(User.class, employeeID);
+            u = (User)session.get(User.class, userID);
         }
         catch (Exception e) {
             // LOG
@@ -38,16 +40,15 @@ public class UserDAOImpl implements UserDAO
         finally {
             session.close();
         }
-
-        return employee;
+        return u;
     }
 
 
-    public void updateUser(int employeeID, String name, String surname, double salary) {
-        User u = this.getUser(employeeID);
-        u.setName(name);
-        u.setSurname(surname);
-        u.setSalary(salary);
+    public void updateUser(String ID, String uname, String pswrd, String email) {
+        User u = this.getUser(userID);
+        u.setUname(uname);
+        u.setPswrd(pswrd);
+        u.setEmail(email);
 
         Session session = null;
         try {
@@ -62,12 +63,12 @@ public class UserDAOImpl implements UserDAO
         }
     }
 
-    public void deleteUser(int employeeID) {
-        User u = this.getEmploye(employeeID);
+    public void deleteUser(int userID) {
+        User u = this.getUser(userID);
         Session session = null;
         try {
             session = FactorySession.openSession();
-            session.delete(Employee.class);
+            session.delete(User.class);
         }
         catch (Exception e) {
             // LOG
@@ -78,13 +79,13 @@ public class UserDAOImpl implements UserDAO
 
     }
 
-
-    public List<Employee> getEmployees() {
+/*
+    public List<User> getUsers() {
         Session session = null;
-        List<Employee> employeeList=null;
+        List<User> employeeList=null;
         try {
             session = FactorySession.openSession();
-            employeeList = session.findAll(Employee.class);
+            userList = session.findAll(User.class);
         }
         catch (Exception e) {
             // LOG
@@ -92,21 +93,21 @@ public class UserDAOImpl implements UserDAO
         finally {
             session.close();
         }
-        return employeeList;
+        return userList;
     }
 
 
-    public List<Employee> getEmployeeByDept(int deptID) {
+    public List<User> getUserByDept(int deptID) {
 
         Session session = null;
-        List<Employee> employeeList=null;
+        List<User> employeeList=null;
         try {
             session = FactorySession.openSession();
 
             HashMap<String, Integer> params = new HashMap<String, Integer>();
             params.put("deptID", deptID);
 
-            employeeList = session.findAll(Employee.class, params);
+            userList = session.findAll(User.class, params);
         }
         catch (Exception e) {
             // LOG
@@ -114,7 +115,6 @@ public class UserDAOImpl implements UserDAO
         finally {
             session.close();
         }
-        return employeeList;
-    }
-
+        return userList;
+    } */
 }
