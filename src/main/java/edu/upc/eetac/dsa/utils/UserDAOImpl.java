@@ -2,18 +2,16 @@ package edu.upc.eetac.dsa.utils;
 
 import edu.upc.eetac.dsa.models.User;
 import edu.upc.eetac.dsa.*;
-import java.util.HashMap;
-import java.util.List;
 
 public class UserDAOImpl implements UserDAO
 
 {
-    public int addUser(String ID, String uname, String pswrd, String email) {
+    public String addUser(String userID, String uname, String pswrd, String email) {
         Session session = null;
-        int userID = 0;
+
         try {
             session = FactorySession.openSession();
-            User u = new User(ID, uname, pswrd, email);
+            User u = new User(userID, uname, pswrd, email);
             session.save(u);
         }
         catch (Exception e) {
@@ -22,7 +20,6 @@ public class UserDAOImpl implements UserDAO
         finally {
             session.close();
         }
-
         return userID;
     }
 
@@ -43,8 +40,7 @@ public class UserDAOImpl implements UserDAO
         return u;
     }
 
-
-    public void updateUser(String ID, String uname, String pswrd, String email) {
+    public void updateUser(String userID, String uname, String pswrd, String email) {
         User u = this.getUser(userID);
         u.setUname(uname);
         u.setPswrd(pswrd);
@@ -63,7 +59,7 @@ public class UserDAOImpl implements UserDAO
         }
     }
 
-    public void deleteUser(int userID) {
+    public void deleteUser(String userID) {
         User u = this.getUser(userID);
         Session session = null;
         try {
