@@ -1,6 +1,11 @@
 package edu.upc.eetac.dsa.utils;
 
 public class QueryHelper {
+
+    /**
+     * @param entity, an Object of any type.
+     * @return query, a String containing the query "INSERT INTO className (-) VALUES (-);"
+     */
     public static String queryInsert(Object entity){
         String[] fields = ObjectHelper.getFields(entity);
         String query = "INSERT INTO " +
@@ -17,6 +22,17 @@ public class QueryHelper {
         }
 
         query += ");";
+        return query;
+    }
+
+    /**
+     * @param entity, an Object of any type.
+     * @return query, a String containing the query "SELECT * FROM className WHERE I=?;"
+     */
+    public static String querySelect(Object entity){
+        String query = "SELECT * FROM " + entity.getClass().getSimpleName() +
+                " WHERE ID=?;"; //SELECT * FROM class WHERE ID=?;
+
         return query;
     }
 }

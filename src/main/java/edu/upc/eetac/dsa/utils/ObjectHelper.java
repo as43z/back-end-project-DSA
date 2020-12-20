@@ -4,17 +4,17 @@ import java.lang.reflect.Field;
 
 public class ObjectHelper {
     public static String[] getFields(Object entity) {
-
-        Class theClass = entity.getClass();
-
-        Field[] fields = theClass.getDeclaredFields();
+        Class c = entity.getClass();
+        Field[] fields = c.getDeclaredFields();
 
         String[] sFields = new String[fields.length];
-        int i=0;
 
-        for (Field f: fields) sFields[i++]=f.getName();
+        int i=0;
+        for (Field f: fields){
+            sFields[i]=f.getName();
+            i++;
+        }
 
         return sFields;
-
     }
 }
