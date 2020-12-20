@@ -18,20 +18,15 @@ public class FactorySession {
         Connection conn = null;
         try
         {
-            Class.forName("org.mariadb.jdbc.Driver");
-            conn =
-                    DriverManager.getConnection("jdbc:mariadb://localhost:3306/bbdd",
+            conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/bbdd",
                             "root", "root");
 
         }
-        catch (SQLException ex)
-        {
+        catch (SQLException ex) {
             // handle any errors
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
             System.out.println("VendorError: " + ex.getErrorCode());
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         }
         return conn;
     }
