@@ -5,10 +5,13 @@ import edu.upc.eetac.dsa.models.User;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+
+import edu.upc.eetac.dsa.utils.UserDAOImpl;
 import org.apache.log4j.Logger;
 
 public class ManagerImpl implements Manager{
     private static final Logger log = Logger.getLogger(ManagerImpl.class);
+    private UserDAOImpl uManager = new UserDAOImpl();
 
     private HashMap<String, User> userList;
 
@@ -70,6 +73,7 @@ public class ManagerImpl implements Manager{
             log.info("No users, adding one.");
             u = new User(uname, pswrd, email);
             userList.put(u.getID(), u);
+            uManager.addUser(u.getID(), u.getUname(), u.getPswrd(), u.getEmail());
         } else {
             log.info("List already has users.");
             User u2 = null;
@@ -87,6 +91,7 @@ public class ManagerImpl implements Manager{
                 log.info("User, does not exist. Adding User");
                 u = new User(uname, pswrd, email);
                 userList.put(u.getID(), u);
+                uManager.addUser(u.getID(), u.getUname(), u.getPswrd(), u.getEmail());
             }
         }
 
