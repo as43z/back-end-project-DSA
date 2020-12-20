@@ -29,17 +29,13 @@ public class ManagerImpl implements Manager{
     }
     //end singleton
 
-    public HashMap<String, User> getUserList() {
-        return userList;
-    }
-
-    public void setUserList(HashMap<String, User> userList) {
-        this.userList = userList;
+    public List<User> getUserList() {
+        return uManager.getUsers();
     }
 
     @Override
     public LinkedList<User> getUsers(){
-        return new LinkedList<User>(this.userList.values());
+        return new LinkedList<>(uManager.getUsers());
     }
 
     /**
@@ -50,10 +46,17 @@ public class ManagerImpl implements Manager{
     @Override
     public User signIN(String uname, String pswrd) {
         User u = null;
+        List<User> uList = uManager.getUsers();
 
-        for(User uConn : userList.values()){
-            if(uConn.getUname().equals(uname)&&uConn.getPswrd().equals(pswrd))
-                u = uConn;
+        int found = 0;
+        int i = 0;
+        while(found == 0){
+            log.info(uList.get(i).getUname() + " " + uname + " " + uList.get(i).getPswrd() + " " + pswrd + " " + i);
+            if(uList.get(i).getUname().equals(uname)&&uList.get(i).getPswrd().equals(pswrd)){
+                u = uList.get(i);
+                found = 1;
+            }
+            i++;
         }
 
         return u;
@@ -67,17 +70,22 @@ public class ManagerImpl implements Manager{
     @Override
     public User signUP(String uname, String pswrd, String email) {
         User u = null;
+        List<User> uList = uManager.getUsers();
 
-        if(userList.size() == 0){
+        for(User uConn : uList){
+            log.info(uConn.getID() + " " + uConn.getUname() + " " + uConn.getEmail() + " " + uConn.getPswrd());
+        }
+
+        if(uList.size() == 0){
             //si no hay usuarios añadelo
             log.info("No users, adding one.");
             u = new User(uname, pswrd, email);
-            userList.put(u.getID(), u);
             uManager.addUser(u.getID(), u.getUname(), u.getPswrd(), u.getEmail());
         } else {
             log.info("List already has users.");
             User u2 = null;
-            for(User uConn : userList.values()){
+            for(User uConn : uList){
+                log.info("Comparing " + uname + " with " + uConn.getUname());
                 if(uConn.getUname().equals(uname)){
                     log.info("User already exist.");
                     u2 = uConn;
@@ -90,7 +98,6 @@ public class ManagerImpl implements Manager{
             if(u2 == null){
                 log.info("User, does not exist. Adding User");
                 u = new User(uname, pswrd, email);
-                userList.put(u.getID(), u);
                 uManager.addUser(u.getID(), u.getUname(), u.getPswrd(), u.getEmail());
             }
         }
@@ -100,7 +107,7 @@ public class ManagerImpl implements Manager{
 
     @Override
     public User getUser(String ID) {
-        return userList.get(ID);
+        return uManager.getUser(ID);
     }
 
     public void tearDown(){

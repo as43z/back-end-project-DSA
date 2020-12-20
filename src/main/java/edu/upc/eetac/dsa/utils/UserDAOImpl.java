@@ -2,10 +2,14 @@ package edu.upc.eetac.dsa.utils;
 
 import edu.upc.eetac.dsa.models.User;
 import edu.upc.eetac.dsa.*;
+import org.apache.log4j.Logger;
 
-public class UserDAOImpl implements UserDAO
+import java.util.List;
 
-{
+public class UserDAOImpl implements UserDAO {
+    private static final Logger log = Logger.getLogger(UserDAOImpl.class);
+
+    @Override
     public String addUser(String userID, String uname, String pswrd, String email) {
         Session session = null;
 
@@ -23,7 +27,7 @@ public class UserDAOImpl implements UserDAO
         return userID;
     }
 
-
+    @Override
     public User getUser(String userID) {
         Session session = null;
         User u = null;
@@ -40,6 +44,7 @@ public class UserDAOImpl implements UserDAO
         return u;
     }
 
+    @Override
     public void updateUser(String userID, String uname, String pswrd, String email) {
         User u = this.getUser(userID);
         u.setUname(uname);
@@ -59,6 +64,7 @@ public class UserDAOImpl implements UserDAO
         }
     }
 
+    @Override
     public void deleteUser(String userID) {
         User u = this.getUser(userID);
         Session session = null;
@@ -75,10 +81,10 @@ public class UserDAOImpl implements UserDAO
 
     }
 
-/*
+    @Override
     public List<User> getUsers() {
         Session session = null;
-        List<User> employeeList=null;
+        List<User> userList =null;
         try {
             session = FactorySession.openSession();
             userList = session.findAll(User.class);
@@ -92,7 +98,7 @@ public class UserDAOImpl implements UserDAO
         return userList;
     }
 
-
+/*
     public List<User> getUserByDept(int deptID) {
 
         Session session = null;
