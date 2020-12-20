@@ -27,7 +27,7 @@ public class UserDAOImpl implements UserDAO
     }
 
 
-    public User getUser(int userID) {
+    public User getUser(String userID) {
         Session session = null;
         User u = null;
         try {
