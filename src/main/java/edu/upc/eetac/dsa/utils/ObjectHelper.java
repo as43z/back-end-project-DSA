@@ -75,6 +75,8 @@ public class ObjectHelper {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
             e.printStackTrace();
+        } catch (NoSuchMethodException ex) {
+            ex.printStackTrace();
         }
 
         return val;

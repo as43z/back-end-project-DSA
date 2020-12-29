@@ -67,9 +67,10 @@ public class SessionImpl implements Session {
             ResultSet rs = pstm.executeQuery();
             while(rs.next()){
                 ResultSetMetaData rsMeta = rs.getMetaData();
-                for(int i = 1; i < rsMeta.getColumnCount(); i++){
-                    String prop = rsMeta.getColumnClassName(i);
+                for(int i = 1; i < rsMeta.getColumnCount() + 1; i++){
+                    String prop = rsMeta.getColumnName(i);
                     ObjectHelper.setter(o, prop, rs.getObject(i));
+                    log.info("Object " + o.getClass().getSimpleName() + " for var " + prop);
                 }
             }
         }catch (Exception ex){

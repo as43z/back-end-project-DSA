@@ -30,11 +30,11 @@ public class QueryHelper {
     }
 
     /**
-     * @param entity, an Object of any type.
+     * @param c, an Object of any type.
      * @return query, a String containing the query "SELECT * FROM className WHERE I=?;"
      */
-    public static String querySelect(Object entity){
-        String query = "SELECT * FROM " + entity.getClass().getSimpleName() +
+    public static String querySelect(Class c){
+        String query = "SELECT * FROM " + c.getSimpleName() +
                 " WHERE ID=?;"; //SELECT * FROM class WHERE ID=?;
 
         return query;

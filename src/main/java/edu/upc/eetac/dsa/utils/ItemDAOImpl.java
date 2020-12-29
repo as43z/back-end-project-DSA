@@ -12,7 +12,7 @@ public class ItemDAOImpl implements ItemDAO{
     private static Logger log = Logger.getLogger(ItemDAOImpl.class);
 
     @Override
-    public String addItem(Item item) {
+    public Item addItem(Item item) {
         log.info("Wanting to add ITEM: " + item.getName());
         Session session =  null;
 
@@ -26,7 +26,7 @@ public class ItemDAOImpl implements ItemDAO{
         } finally {
             session.close();
         }
-        return item.getID();
+        return item;
     }
 
     @Override
