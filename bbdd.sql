@@ -1,9 +1,16 @@
 DROP DATABASE IF EXISTS bbdd;
 CREATE DATABASE bbdd;
 USE bbdd;
+
 CREATE TABLE User (
 	ID TEXT NOT NULL,
 	uname TEXT NOT NULL,
 	pswrd TEXT NOT NULL,
 	email TEXT NOT NULL
+);
+
+CREATE TABLE Item (
+    ID TEXT NOT NULL,
+    name TEXT NOT NULL,
+    description TEXT NOT NULL
 );

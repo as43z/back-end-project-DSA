@@ -65,6 +65,7 @@ public class ObjectHelper {
 
             String sMeth = "get" + prop; //Method
 
+            log.info("using method " + sMeth);
             //USE THE METHOD
             Method get = null;
             get = c.getMethod(sMeth);

@@ -14,8 +14,6 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 
 
@@ -23,13 +21,13 @@ import java.util.List;
 //Swagger Imports
 @Api(value = "/Authentication", description = "Endpoint to User Service")
 @Path("/Authentication")
-public class ManagerService
+public class AuthenticationService
 {
-    static final Logger logger = Logger.getLogger(ManagerService.class);
+    static final Logger logger = Logger.getLogger(AuthenticationService.class);
     private Manager manager;
 
 
-    public ManagerService(){
+    public AuthenticationService(){
         //Configuring Log4j, location of the log4j.properties file and must always be inside the src folder
         PropertyConfigurator.configure("src/main/resources/log4j.properties");
         this.manager = ManagerImpl.getInstance();

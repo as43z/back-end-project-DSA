@@ -10,8 +10,13 @@ public interface Manager {
     public User signIN(String uname, String pswrd);
     public User signUP(String uname, String pswrd, String email);
 
+    // item register
+    public Item registerItem(String itemID, String name, String description);
+
     // gets
+    public Item getItem(String itemID);
     public User getUser(String uname);
+    public LinkedList<Item> getItems();
     public LinkedList<User> getUsers();
 
     // teardown

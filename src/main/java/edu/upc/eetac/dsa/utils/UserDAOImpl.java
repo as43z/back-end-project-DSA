@@ -29,6 +29,7 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public User getUser(String userID) {
+        log.info("Searching for User: " + userID);
         Session session = null;
         User u = null;
         try {

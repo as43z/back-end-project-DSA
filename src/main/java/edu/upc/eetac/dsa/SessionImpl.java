@@ -46,7 +46,9 @@ public class SessionImpl implements Session {
         //CLOSE CONNECTION
         try{
             this.conn.close();
+            log.info("Connection closed.");
         } catch(SQLException ex) {
+            log.info("Something BAD happened.");
             ex.printStackTrace();
         }
     }
