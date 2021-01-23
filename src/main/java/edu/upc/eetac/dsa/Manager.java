@@ -20,9 +20,17 @@ public interface Manager {
     public Item getItem(String itemID);
     public Maps getMap(String MapID);
     public User getUser(String uname);
+    public Inventory getUserInventory(String userID);
+    public Game getUserGame(String userID);
+    public Achievements getUserAchievements(String userID);
     public LinkedList<Item> getItems();
     public LinkedList<User> getUsers();
     public LinkedList<Maps> getMaps();
+
+    // updates
+    public User updateUser(User user);
+    public Inventory updateInventory(Inventory inventory, String userID);
+    public Achievements updateAchievements(String userID, Achievements achievements);
 
     // teardown
     public void tearDown();
