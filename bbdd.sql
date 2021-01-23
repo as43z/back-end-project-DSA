@@ -62,18 +62,3 @@ CREATE TABLE Maps (
     name TEXT NOT NULL,
     vectMap TEXT NOT NULL
 );
-
-CREATE TABLE Qualities (
-    ID TEXT NOT NULL,
-    healthVal INT,
-    calcVal INT,
-    stamVal INT,
-    logicVal INT,
-    memVal INT
-);
-
-CREATE TABLE QualityDescription (
-    ID TEXT NOT NULL,
-    name TEXT NOT NULL,
-    description TEXT NOT NULL
-);
