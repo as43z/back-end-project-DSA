@@ -1,8 +1,6 @@
 package edu.upc.eetac.dsa;
 
-import edu.upc.eetac.dsa.models.Item;
-import edu.upc.eetac.dsa.models.Maps;
-import edu.upc.eetac.dsa.models.User;
+import edu.upc.eetac.dsa.models.*;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -44,6 +42,21 @@ public class ManagerImpl implements Manager{
 
     @Override
     public LinkedList<Maps> getMaps() {
+        return null;
+    }
+
+    @Override
+    public User updateUser(User user) {
+        return null;
+    }
+
+    @Override
+    public Inventory updateInventory(Inventory inventory, String userID) {
+        return null;
+    }
+
+    @Override
+    public Achievements updateAchievements(String userID, Achievements achievements) {
         return null;
     }
 
@@ -162,6 +175,21 @@ public class ManagerImpl implements Manager{
     @Override
     public User getUser(String ID) {
         return uManager.getUser(ID);
+    }
+
+    @Override
+    public Inventory getUserInventory(String userID) {
+        return null;
+    }
+
+    @Override
+    public Game getUserGame(String userID) {
+        return null;
+    }
+
+    @Override
+    public Achievements getUserAchievements(String userID) {
+        return null;
     }
 
     @Override

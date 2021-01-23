@@ -61,7 +61,7 @@ public class UserService {
     })
     @Path("/{userID}/Game")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getUserInventory(@PathParam("userID") String userID){
+    public Response getUserGame(@PathParam("userID") String userID){
         Game game = this.manager.getUserGame(userID);
         return Response.status(200).entity(game).build();
     }
@@ -73,7 +73,7 @@ public class UserService {
     })
     @Path("/{userID}/Achievements")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getUserInventory(@PathParam("userID") String userID){
+    public Response getUserAchievements(@PathParam("userID") String userID){
         Achievements achievements = this.manager.getUserAchievements(userID);
         return Response.status(200).entity(achievements).build();
     }
@@ -102,7 +102,7 @@ public class UserService {
     @Path("/{userID}/UpdateInventory")
     @Produces(MediaType.APPLICATION_JSON)
     public Response updateUserInventory(Inventory inventory, @PathParam("userID") String userID){
-        Inventory u = this.manager.updateInventory(userID, inventory);
+        Inventory u = this.manager.updateInventory(inventory, userID);
 
         if(u == null){
             return Response.status(400).build();
