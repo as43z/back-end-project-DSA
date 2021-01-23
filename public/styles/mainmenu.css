@@ -38,3 +38,18 @@
 .footer img {
   margin-top: 10px;
 }
+
+body {
+    background-color: #eeeeee
+}
+
+
+.container {
+    margin-top: 50px;
+    margin-bottom: 50px
+}
+
+#header {
+  margin-top: 0px;
+  margin-bottom: 0px
+}
