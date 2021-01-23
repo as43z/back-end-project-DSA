@@ -10,12 +10,14 @@ import java.util.List;
 
 import edu.upc.eetac.dsa.utils.ItemDAOImpl;
 import edu.upc.eetac.dsa.utils.UserDAOImpl;
+import edu.upc.eetac.dsa.utils.MapsDAOImpl;
 import org.apache.log4j.Logger;
 
 public class ManagerImpl implements Manager{
     private static final Logger log = Logger.getLogger(ManagerImpl.class);
     private UserDAOImpl uManager = new UserDAOImpl();
     private ItemDAOImpl iManager = new ItemDAOImpl();
+    private MapsDAOImpl mManager = new MapsDAOImpl();
 
     private HashMap<String, User> userList;
 
@@ -44,7 +46,7 @@ public class ManagerImpl implements Manager{
 
     @Override
     public LinkedList<Maps> getMaps() {
-        return null;
+        return new LinkedList<>(mManager.getMaps());
     }
 
     /**
