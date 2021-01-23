@@ -29,6 +29,22 @@ public class QueryHelper {
         return query;
     }
 
+    public static String queryUpdate(Object entity){
+        String[] fields = ObjectHelper.getFields(entity);
+        String query = "UPDATE " +
+                entity.getClass().getSimpleName() + " SET ";
+
+        query += fields[0];
+        for(int i = 1; i < fields.length; i++){
+            query +="=?, " + fields[i];
+        }
+
+        query += "=? WHERE ID=?;";
+
+        log.info("UPDATE Query was created: " + query);
+        return query;
+    }
+
     /**
      * @param c, an Object of any type.
      * @return query, a String containing the query "SELECT * FROM className WHERE I=?;"

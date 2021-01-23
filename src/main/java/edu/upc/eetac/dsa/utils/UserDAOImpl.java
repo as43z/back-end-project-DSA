@@ -46,16 +46,11 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public void updateUser(String userID, String uname, String pswrd, String email) {
-        User u = this.getUser(userID);
-        u.setUname(uname);
-        u.setPswrd(pswrd);
-        u.setEmail(email);
-
+    public User updateUser(User u) {
         Session session = null;
         try {
             session = FactorySession.openSession();
-            session.update(User.class);
+            session.update(u);
         }
         catch (Exception e) {
             // LOG
@@ -63,6 +58,7 @@ public class UserDAOImpl implements UserDAO {
         finally {
             session.close();
         }
+        return u;
     }
 
     @Override

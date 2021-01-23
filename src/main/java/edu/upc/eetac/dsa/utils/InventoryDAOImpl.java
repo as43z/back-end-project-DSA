@@ -45,8 +45,20 @@ public class InventoryDAOImpl implements InventoryDAO {
     }
 
     @Override
-    public void updateInventory(String ID, int turtleQuantity, int coffQuantity, int redbullQuantity, int pillsQuantity, int calculatorQuantity, int ruleQuantity, int compassQuantity, int pencilQuantity, int glassesQuantity, int puzzleQuantity, int bookQuantity, int usbQuantity, int cheatQuantity) {
+    public Inventory updateInventory(Inventory inventory) {
+        Session session =  null;
 
+        try{
+            session = FactorySession.openSession();
+            session.save(inventory);
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+        return inventory;
     }
 
     @Override

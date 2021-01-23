@@ -8,7 +8,7 @@ public interface QualitiesDAO {
 
     Qualities addQualities(Qualities qualities);
     Qualities getQualities(String qualitiesID);
-    void updateQualities(String ID, int healthVal, int calcVal, int stamVal, int logicVal, int memVal);
+    Qualities updateQualities(Qualities qualities);
     void deleteQualities(String gameID);
     List<Qualities> getQualitiesList();
 }

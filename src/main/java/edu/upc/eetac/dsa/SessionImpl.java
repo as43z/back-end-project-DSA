@@ -87,7 +87,21 @@ public class SessionImpl implements Session {
     */
     @Override
     public void update(Object o) {
-
+        String queryUpdate = QueryHelper.queryInsert(o);
+        PreparedStatement pstm = null;
+        try{
+            pstm = conn.prepareStatement(queryUpdate); //EMPEZAMOS A PREPARARLO
+            int i = 1;
+            for(String field : ObjectHelper.getFields(o)){
+                Object prop = ObjectHelper.getter(o, field); //Cada Objecto -> devuelve el valor del campo
+                log.info("adding field at " + o.getClass().getSimpleName() + " value " + String.valueOf(o));
+                pstm.setObject(i, prop); //BUILD
+                i++;
+            }
+            pstm.executeQuery();
+        } catch(Exception ex){
+            ex.printStackTrace();
+        }
     }
 
     @Override

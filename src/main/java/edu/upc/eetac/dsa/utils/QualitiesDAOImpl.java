@@ -45,8 +45,20 @@ public class QualitiesDAOImpl implements QualitiesDAO {
     }
 
     @Override
-    public void updateQualities(String ID, int healthVal, int calcVal, int stamVal, int logicVal, int memVal) {
+    public Qualities updateQualities(Qualities qualities) {
+        Session session =  null;
 
+        try{
+            session = FactorySession.openSession();
+            session.save(qualities);
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+        return qualities;
     }
 
     @Override

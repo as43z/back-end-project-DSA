@@ -44,8 +44,20 @@ public class AchievementsDAOImpl implements  AchievementsDAO{
     }
 
     @Override
-    public void updateAchievements(String ID, int calcAch, int electronicsAch, int commsAch, int oescAch, int dsaAch, int aeroAch, int tfgAch) {
+    public Achievements updateAchievements(Achievements ach) {
+        Session session =  null;
 
+        try{
+            session = FactorySession.openSession();
+            session.save(ach);
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+        return ach;
     }
 
     @Override
