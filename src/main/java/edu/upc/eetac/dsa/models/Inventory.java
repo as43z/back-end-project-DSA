@@ -12,11 +12,11 @@ public class Inventory {
     private int pencilQuantity;
     private int glassesQuantity;
     private int puzzleQuantity;
-    private int bookQuantityt;
+    private int bookQuantity;
     private int usbQuantity;
     private int cheatQuantity;
 
-    public Inventory(String id, int turtleQuantity, int coffQuantity, int redbullQuantity, int pillsQuantity, int calculatorQuantity, int ruleQuantity, int compassQuantity, int pencilQuantity, int glassesQuantity, int puzzleQuantity, int bookQuantityt, int usbQuantity, int cheatQuantity) {
+    public Inventory(String id, int turtleQuantity, int coffQuantity, int redbullQuantity, int pillsQuantity, int calculatorQuantity, int ruleQuantity, int compassQuantity, int pencilQuantity, int glassesQuantity, int puzzleQuantity, int bookQuantity, int usbQuantity, int cheatQuantity) {
         this.id = id;
         this.turtleQuantity = turtleQuantity;
         this.coffQuantity = coffQuantity;
@@ -28,7 +28,7 @@ public class Inventory {
         this.pencilQuantity = pencilQuantity;
         this.glassesQuantity = glassesQuantity;
         this.puzzleQuantity = puzzleQuantity;
-        this.bookQuantityt = bookQuantityt;
+        this.bookQuantity = bookQuantity;
         this.usbQuantity = usbQuantity;
         this.cheatQuantity = cheatQuantity;
     }
@@ -121,12 +121,12 @@ public class Inventory {
         this.puzzleQuantity = puzzleQuantity;
     }
 
-    public int getBookQuantityt() {
-        return bookQuantityt;
+    public int getBookQuantity() {
+        return bookQuantity;
     }
 
-    public void setBookQuantityt(int bookQuantityt) {
-        this.bookQuantityt = bookQuantityt;
+    public void setBookQuantity(int bookQuantity) {
+        this.bookQuantity = bookQuantity;
     }
 
     public int getUsbQuantity() {
