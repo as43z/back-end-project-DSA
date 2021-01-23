@@ -1,6 +1,7 @@
 package edu.upc.eetac.dsa;
 
 import edu.upc.eetac.dsa.models.Item;
+import edu.upc.eetac.dsa.models.Maps;
 import edu.upc.eetac.dsa.models.User;
 
 import java.util.HashMap;
@@ -39,6 +40,11 @@ public class ManagerImpl implements Manager{
     @Override
     public LinkedList<User> getUsers(){
         return new LinkedList<>(uManager.getUsers());
+    }
+
+    @Override
+    public LinkedList<Maps> getMaps() {
+        return null;
     }
 
     /**
@@ -141,9 +147,17 @@ public class ManagerImpl implements Manager{
     }
 
     @Override
+    public Maps registerMap(String ID, String name, String vectMap) {
+
+    }
+
+    @Override
     public Item getItem(String itemID) {
         return iManager.getItem(itemID);
     }
+
+    @Override
+    public Maps getMap(String MapID) {this. }
 
     @Override
     public User getUser(String ID) {
