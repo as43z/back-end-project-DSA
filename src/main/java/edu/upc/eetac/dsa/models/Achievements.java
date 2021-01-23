@@ -2,15 +2,15 @@ package edu.upc.eetac.dsa.models;
 
 public class Achievements {
     private String ID;
-    private boolean calcAch;
-    private boolean electronicsAch;
-    private boolean commsAch;
-    private boolean oescAch;
-    private boolean dsaAch;
-    private boolean aeroAch;
-    private boolean tfgAch;
+    private int calcAch;
+    private int electronicsAch;
+    private int commsAch;
+    private int oescAch;
+    private int dsaAch;
+    private int aeroAch;
+    private int tfgAch;
 
-    public Achievements(String ID, boolean calcAch, boolean electronicsAch, boolean commsAch, boolean oescAch, boolean dsaAch, boolean aeroAch, boolean tfgAch) {
+    public Achievements(String ID, int calcAch, int electronicsAch, int commsAch, int oescAch, int dsaAch, int aeroAch, int tfgAch) {
         this.ID = ID;
         this.calcAch = calcAch;
         this.electronicsAch = electronicsAch;
@@ -21,67 +21,67 @@ public class Achievements {
         this.tfgAch = tfgAch;
     }
 
-    public String getId() {
+    public String getID() {
         return ID;
     }
 
-    public void setId(String ID) {
+    public void setID(String ID) {
         this.ID = ID;
     }
 
-    public boolean isCalcAch() {
+    public int getCalcAch() {
         return calcAch;
     }
 
-    public void setCalcAch(boolean calcAch) {
+    public void setCalcAch(int calcAch) {
         this.calcAch = calcAch;
     }
 
-    public boolean isElectronicsAch() {
+    public int getElectronicsAch() {
         return electronicsAch;
     }
 
-    public void setElectronicsAch(boolean electronicsAch) {
+    public void setElectronicsAch(int electronicsAch) {
         this.electronicsAch = electronicsAch;
     }
 
-    public boolean isCommsAch() {
+    public int getCommsAch() {
         return commsAch;
     }
 
-    public void setCommsAch(boolean commsAch) {
+    public void setCommsAch(int commsAch) {
         this.commsAch = commsAch;
     }
 
-    public boolean isOescAch() {
+    public int getOescAch() {
         return oescAch;
     }
 
-    public void setOescAch(boolean oescAch) {
+    public void setOescAch(int oescAch) {
         this.oescAch = oescAch;
     }
 
-    public boolean isDsaAch() {
+    public int getDsaAch() {
         return dsaAch;
     }
 
-    public void setDsaAch(boolean dsaAch) {
+    public void setDsaAch(int dsaAch) {
         this.dsaAch = dsaAch;
     }
 
-    public boolean isAeroAch() {
+    public int getAeroAch() {
         return aeroAch;
     }
 
-    public void setAeroAch(boolean aeroAch) {
+    public void setAeroAch(int aeroAch) {
         this.aeroAch = aeroAch;
     }
 
-    public boolean isTfgAch() {
+    public int getTfgAch() {
         return tfgAch;
     }
 
-    public void setTfgAch(boolean tfgAch) {
+    public void setTfgAch(int tfgAch) {
         this.tfgAch = tfgAch;
     }
 }
