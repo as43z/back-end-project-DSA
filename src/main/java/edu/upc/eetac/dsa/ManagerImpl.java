@@ -43,8 +43,8 @@ public class ManagerImpl implements Manager{
     }
 
     @Override
-    public LinkedList<Maps> getMaps() {
-        return new LinkedList<>(mManager.getMaps());
+    public LinkedList<Maps> getMapsList() {
+        return new LinkedList<>(mManager.getMapsList());
     }
 
     @Override
@@ -162,8 +162,30 @@ public class ManagerImpl implements Manager{
     }
 
     @Override
-    public Maps registerMap(String ID, String name, String vectMap) {
+    public Maps registerMap(String MapsID, String name, String vectMap) {
+        Maps i = null;
+        List<Maps> mList = mManager.getMapsList();
 
+        if(mList.size() == 0){
+            i = new Maps(MapsID,name,vectMap);
+            mManager.addMaps(i);
+        }
+        else {
+            Maps i2 = null;
+            for (Maps maps : mList) {
+                if (maps.getName().equals(name)) {
+                    i2 = maps;
+                } else if (maps.getId().equals(MapsID)){
+                    i2 = maps;
+                }
+            }
+
+            if (i2 == null) {
+                i = new Maps(MapsID,name,vectMap);
+                mManager.addMaps(i);
+            }
+        }
+        return i;
     }
 
     @Override
@@ -172,7 +194,9 @@ public class ManagerImpl implements Manager{
     }
 
     @Override
-    public Maps getMap(String MapID) {this. }
+    public Maps getMaps(String MapID) {
+        return mManager.getMaps(MapID);
+    }
 
     @Override
     public User getUser(String ID) {
