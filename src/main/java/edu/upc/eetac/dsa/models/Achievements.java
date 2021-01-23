@@ -1,7 +1,7 @@
 package edu.upc.eetac.dsa.models;
 
 public class Achievements {
-    private String id;
+    private String ID;
     private boolean calcAch;
     private boolean electronicsAch;
     private boolean commsAch;
@@ -10,8 +10,8 @@ public class Achievements {
     private boolean aeroAch;
     private boolean tfgAch;
 
-    public Achievements(String id, boolean calcAch, boolean electronicsAch, boolean commsAch, boolean oescAch, boolean dsaAch, boolean aeroAch, boolean tfgAch) {
-        this.id = id;
+    public Achievements(String ID, boolean calcAch, boolean electronicsAch, boolean commsAch, boolean oescAch, boolean dsaAch, boolean aeroAch, boolean tfgAch) {
+        this.ID = ID;
         this.calcAch = calcAch;
         this.electronicsAch = electronicsAch;
         this.commsAch = commsAch;
@@ -22,11 +22,11 @@ public class Achievements {
     }
 
     public String getId() {
-        return id;
+        return ID;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId(String ID) {
+        this.ID = ID;
     }
 
     public boolean isCalcAch() {

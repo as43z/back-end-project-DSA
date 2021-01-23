@@ -4,9 +4,11 @@ import edu.upc.eetac.dsa.utils.RandomUtils;
 
 public class User {
     private String ID;
+    private String idGame;
     private String uname;
     private String pswrd;
     private String email;
+    private int cash;
 
     public User(){
         this.pswrd = RandomUtils.getRandID();
@@ -31,6 +33,15 @@ public class User {
         this.uname = uname;
         this.pswrd = pswrd;
         this.email = email;
+    }
+
+    public User(String ID, String uname, String pswrd, String email,String idGame, int cash){
+        this.ID = ID;
+        this.uname = uname;
+        this.pswrd = pswrd;
+        this.email = email;
+        this.idGame = idGame;
+        this.cash = cash;
     }
 
     public String getID() {
@@ -63,5 +74,21 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getIdGame() {
+        return idGame;
+    }
+
+    public void setIdGame(String idGame) {
+        this.idGame = idGame;
+    }
+
+    public int getCash() {
+        return cash;
+    }
+
+    public void setCash(int cash) {
+        this.cash = cash;
     }
 }

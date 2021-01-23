@@ -109,15 +109,15 @@ public class ManagerImpl implements Manager{
     }
 
     @Override
-    public Item registerItem(String itemID, String name, String description) {
+    public Item registerItem(String itemID, String name, String description, String qualityUpdater, int quantityUpdater, int price, String image) {
         Item i = null;
         List<Item> iList = iManager.getItems();
 
         if(iList.size() == 0){
             //si no hay usuarios añadelo
             log.info("No items, adding one.");
-            i = new Item(itemID, name, description);
-            iManager.addItem(i);
+                i = new Item(itemID, name, description, qualityUpdater, quantityUpdater, price, image);
+                iManager.addItem(i);
         } else {
             log.info("Already Items in use.");
             Item i2 = null;
@@ -133,7 +133,7 @@ public class ManagerImpl implements Manager{
 
             if (i2 == null) {
                 log.info("Item does not exist. Registering Item.");
-                i = new Item(itemID, name, description);
+                i = new Item(itemID, name, description, qualityUpdater, quantityUpdater, price, image);
                 iManager.addItem(i);
             }
         }

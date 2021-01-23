@@ -1,15 +1,15 @@
 package edu.upc.eetac.dsa.models;
 
 public class Qualities {
-    private String id;
+    private String ID;
     private int healthVal;
     private int calcVal;
     private int stamVal;
     private int logicVal;
     private int memVal;
 
-    public Qualities(String id, int healthVal, int calcVal, int stamVal, int logicVal, int memVal) {
-        this.id = id;
+    public Qualities(String ID, int healthVal, int calcVal, int stamVal, int logicVal, int memVal) {
+        this.ID = ID;
         this.healthVal = healthVal;
         this.calcVal = calcVal;
         this.stamVal = stamVal;
@@ -18,11 +18,11 @@ public class Qualities {
     }
 
     public String getId() {
-        return id;
+        return ID;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId(String ID) {
+        this.ID = ID;
     }
 
     public int getHealthVal() {

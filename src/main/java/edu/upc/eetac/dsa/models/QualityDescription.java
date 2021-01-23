@@ -1,22 +1,22 @@
 package edu.upc.eetac.dsa.models;
 
 public class QualityDescription {
-    private String id;
+    private String ID;
     private String name;
     private String description;
 
-    public QualityDescription(String id, String name, String description) {
-        this.id = id;
+    public QualityDescription(String ID, String name, String description) {
+        this.ID = ID;
         this.name = name;
         this.description = description;
     }
 
     public String getId() {
-        return id;
+        return ID;
     }
 
     public void setId(String id) {
-        this.id = id;
+        this.ID = ID;
     }
 
     public String getName() {

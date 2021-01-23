@@ -1,7 +1,7 @@
 package edu.upc.eetac.dsa.models;
 
 public class Inventory {
-    private String id;
+    private String ID;
     private int turtleQuantity;
     private int coffQuantity;
     private int redbullQuantity;
@@ -16,8 +16,8 @@ public class Inventory {
     private int usbQuantity;
     private int cheatQuantity;
 
-    public Inventory(String id, int turtleQuantity, int coffQuantity, int redbullQuantity, int pillsQuantity, int calculatorQuantity, int ruleQuantity, int compassQuantity, int pencilQuantity, int glassesQuantity, int puzzleQuantity, int bookQuantity, int usbQuantity, int cheatQuantity) {
-        this.id = id;
+    public Inventory(String ID, int turtleQuantity, int coffQuantity, int redbullQuantity, int pillsQuantity, int calculatorQuantity, int ruleQuantity, int compassQuantity, int pencilQuantity, int glassesQuantity, int puzzleQuantity, int bookQuantity, int usbQuantity, int cheatQuantity) {
+        this.ID = ID;
         this.turtleQuantity = turtleQuantity;
         this.coffQuantity = coffQuantity;
         this.redbullQuantity = redbullQuantity;
@@ -34,11 +34,11 @@ public class Inventory {
     }
 
     public String getId() {
-        return id;
+        return ID;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId(String ID) {
+        this.ID = ID;
     }
 
     public int getTurtleQuantity() {
