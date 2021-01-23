@@ -1,14 +1,14 @@
 package edu.upc.eetac.dsa.models;
 
-public class Game {
-    private String id;
+public class Games {
+    private String ID;
     private String idQualities;
     private String idObjects;
     private String idAchievements;
     private String idMap;
 
-    public Game(String id, String idQualities, String idObjects, String idAchievements, String idMap) {
-        this.id = id;
+    public Games(String ID, String idQualities, String idObjects, String idAchievements, String idMap) {
+        this.ID = ID;
         this.idQualities = idQualities;
         this.idObjects = idObjects;
         this.idAchievements = idAchievements;
@@ -16,11 +16,11 @@ public class Game {
     }
 
     public String getId() {
-        return id;
+        return ID;
     }
 
     public void setId(String id) {
-        this.id = id;
+        this.ID = id;
     }
 
     public String getIdQualities() {
