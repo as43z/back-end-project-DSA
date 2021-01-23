@@ -1,11 +1,11 @@
 package edu.upc.eetac.dsa.models;
 
-public class Map {
+public class Maps {
     private String id;
     private String name;
     private String vectMap;
 
-    public Map(String id, String name, String vectMap) {
+    public Maps(String id, String name, String vectMap) {
         this.id = id;
         this.name = name;
         this.vectMap = vectMap;
