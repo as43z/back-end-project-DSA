@@ -1,7 +1,7 @@
 $(document).ready(function(){
   let userName = sessionStorage.getItem('Nombre');
   var mokData = [
-  { object: "Turtle", desc: 'Descripción de la tortuga', price:'3€', quality: 'Health', quantity: '10', image: 'images/calculator.png'},
+  { object: "Turtle", desc: 'Descripción de la tortuga', price:'3€', quality: 'Health', quantity: '10', image: 'images/turtle.png'},
   { object: "Calculadora", desc: 'Descripción de la calculadora', price:'3€', quality: 'Stamina', quantity: '2', image: 'images/calculator.png'},
   { object: "Calculadora", desc: 'Descripción de la calculadora', price:'3€', quality: 'Stamina', quantity: '2', image: 'images/calculator.png'},
   { object: "Calculadora", desc: 'Descripción de la calculadora', price:'3€', quality: 'Stamina', quantity: '2', image: 'images/calculator.png'},
