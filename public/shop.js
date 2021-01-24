@@ -17,7 +17,7 @@ $(document).ready(function(){
         $('#coins').append(templateCoins);
     },
     error: function(xhr,resp,text){
-        alert("Error while getting the user cash!");
+        alert("Error getting the user cash!");
     }
   })
 
