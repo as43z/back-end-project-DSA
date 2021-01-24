@@ -56,7 +56,7 @@ public class MapsDAOImpl implements MapsDAO{
         Session session = null;
         try {
             session = FactorySession.openSession();
-            session.update(Maps.class);
+            session.update(map);
         }
         catch (Exception e) {
             // LOG

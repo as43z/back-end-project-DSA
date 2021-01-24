@@ -58,7 +58,7 @@ public class UserDAOImpl implements UserDAO {
         Session session = null;
         try {
             session = FactorySession.openSession();
-            session.update(User.class);
+            session.update(u);
         } catch (Exception e) {
             // LOG
         } finally {

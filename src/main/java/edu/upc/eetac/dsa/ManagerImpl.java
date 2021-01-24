@@ -229,17 +229,20 @@ public class ManagerImpl implements Manager{
 
     @Override
     public Inventory getUserInventory(String userID) {
-        return inManager.getInventory(userID);
+        Game g = this.getUserGame(userID);
+        return inManager.getInventory(g.getIdObjects());
     }
 
     @Override
     public Game getUserGame(String userID) {
-        return gManager.getGame(userID);
+        User u = this.getUser(userID);
+        return gManager.getGame(u.getIdGame());
     }
 
     @Override
     public Achievements getUserAchievements(String userID) {
-        return aManager.getAchievements(userID);
+        Game g = this.getUserGame(userID);
+        return aManager.getAchievements(g.getIdAchievements());
     }
 
     @Override

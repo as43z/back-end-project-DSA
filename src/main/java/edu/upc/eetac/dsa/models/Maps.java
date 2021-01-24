@@ -6,6 +6,9 @@ public class Maps {
     private String name;
     private String vectMap;
 
+    public Maps() {
+    }
+
     public Maps(String ID, String name, String vectMap) {
         this.ID = ID;
         this.name = name;

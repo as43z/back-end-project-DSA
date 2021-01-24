@@ -18,6 +18,9 @@ public class Inventory {
     private int usbQuantity;
     private int cheatQuantity;
 
+    public Inventory() {
+    }
+
     public Inventory(int turtleQuantity, int coffQuantity, int redbullQuantity, int pillsQuantity, int calculatorQuantity, int ruleQuantity, int compassQuantity, int pencilQuantity, int glassesQuantity, int puzzleQuantity, int bookQuantity, int usbQuantity, int cheatQuantity) {
         this.ID = RandomUtils.getRandID();
         this.turtleQuantity = turtleQuantity;

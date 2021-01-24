@@ -12,6 +12,9 @@ public class Achievements {
     private int aeroAch;
     private int tfgAch;
 
+    public Achievements() {
+    }
+
     public Achievements(int calcAch, int electronicsAch, int commsAch, int oescAch, int dsaAch, int aeroAch, int tfgAch) {
         this.ID = RandomUtils.getRandID();
         this.calcAch = calcAch;

@@ -58,7 +58,7 @@ public class AchievementsDAOImpl implements  AchievementsDAO{
         Session session = null;
         try {
             session = FactorySession.openSession();
-            session.update(Achievements.class);
+            session.update(achievements);
         } catch (Exception e) {
             // LOG
         } finally {

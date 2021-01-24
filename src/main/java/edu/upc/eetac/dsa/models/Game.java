@@ -8,7 +8,10 @@ public class Game {
     private String idAchievements;
     private String idMap;
 
-    public Game(String idObjects, String idAchievements,String idMap) {
+    public Game() {
+    }
+
+    public Game(String idObjects, String idAchievements, String idMap) {
         this.ID = RandomUtils.getRandID();
         this.idObjects = idObjects;
         this.idAchievements = idAchievements;

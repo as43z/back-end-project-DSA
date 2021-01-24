@@ -62,7 +62,7 @@ public class ItemDAOImpl implements ItemDAO{
         Session session = null;
         try {
             session = FactorySession.openSession();
-            session.update(Item.class);
+            session.update(item);
         }
         catch (Exception e) {
             // LOG

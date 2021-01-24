@@ -56,7 +56,7 @@ public class GameDAOImpl implements GameDAO {
         Session session = null;
         try {
             session = FactorySession.openSession();
-            session.update(Game.class);
+            session.update(game);
         }
         catch (Exception e) {
             // LOG
