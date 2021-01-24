@@ -96,13 +96,6 @@ public class SessionImpl implements Session {
         }
     }
 
-
-    /*
-    TODO:
-        - Update method
-        - Delete method
-        - Get all method
-    */
     @Override
     public void update(Object o) {
         String queryUpdate = QueryHelper.queryUpdate(o);

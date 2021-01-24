@@ -51,9 +51,10 @@ public class InventoryDAOImpl implements InventoryDAO {
 
         try{
             session = FactorySession.openSession();
-            session.save(inventory);
+            session.update(inventory);
         }
         catch(Exception ex){
+            inventory = null;
             ex.printStackTrace();
         }
         finally {

@@ -44,6 +44,7 @@ public class ItemDAOImpl implements ItemDAO{
         catch (Exception e) {
             // LOG
             log.info("Could not proceed with the retrieving of the item.");
+            i = null;
             e.printStackTrace();
         }
         finally {

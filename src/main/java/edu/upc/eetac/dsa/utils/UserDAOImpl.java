@@ -1,6 +1,5 @@
 package edu.upc.eetac.dsa.utils;
 
-import edu.upc.eetac.dsa.models.Maps;
 import edu.upc.eetac.dsa.models.User;
 import edu.upc.eetac.dsa.*;
 import org.apache.log4j.Logger;
@@ -37,6 +36,7 @@ public class UserDAOImpl implements UserDAO {
             u = (User)session.get(User.class, userID);
         }
         catch (Exception e) {
+            u = null;
             // LOG
         }
         finally {
@@ -61,15 +61,18 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public void updateSingleElement(String prop, Object value, String ID){
+    public int updateSingleElement(String prop, Object value, String ID){
         Session session = null;
+        int solutionOk = 0;
         try {
             session = FactorySession.openSession();
             session.updateSingleElement(User.class, prop, ID, value);
+            solutionOk = 1;
         } catch (Exception e) {
             // LOG
         } finally {
             session.close();
+            return solutionOk;
         }
     }
 

@@ -52,13 +52,19 @@ public class MapsService
     @ApiOperation(value="Get all Maps", notes="get all maps")
     @ApiResponses(value={
             @ApiResponse(code = 201, message = "Successful", response = Maps.class, responseContainer = "List"),
+            @ApiResponse(code = 404, message = "Not Found.")
     })
     @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getMaps(){
         List<Maps> maps = this.manager.getMapsList();
-        GenericEntity<List<Maps>> entity = new GenericEntity<List<Maps>>(maps){};
-        return Response.status(201).entity(entity).header("Access-Control-Allow-Origin", "*").build();
+        if (maps == null){
+            return Response.status(404).build();
+        } else {
+            GenericEntity<List<Maps>> entity = new GenericEntity<List<Maps>>(maps) {
+            };
+            return Response.status(201).entity(entity).header("Access-Control-Allow-Origin", "*").build();
+        }
     }
 
     //
@@ -66,12 +72,17 @@ public class MapsService
     @ApiOperation(value="Get a map", notes="Get a map")
     @ApiResponses(value={
             @ApiResponse(code = 201, message = "Successful", response = Maps.class, responseContainer = "List"),
+            @ApiResponse(code = 404, message = "Not Found.")
     })
     @Path("/{mapID}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getMap(@PathParam("mapID") String MapID){
         Maps entity = this.manager.getMaps(MapID);
-        return Response.status(201).entity(entity).build();
+        if (entity == null){
+            return Response.status(404).build();
+        } else {
+            return Response.status(201).entity(entity).build();
+        }
     }
 }
 

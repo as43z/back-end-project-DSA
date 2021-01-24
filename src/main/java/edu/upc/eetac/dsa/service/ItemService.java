@@ -56,24 +56,35 @@ public class ItemService {
     @ApiOperation(value="Get all items", notes="get all items")
     @ApiResponses(value={
             @ApiResponse(code = 201, message = "Successful", response = Item.class, responseContainer = "List"),
+            @ApiResponse(code = 404, message = "Not Found.")
     })
     @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getItems(){
         List<Item> items = this.manager.getItems();
-        GenericEntity<List<Item>> entity = new GenericEntity<List<Item>>(items){};
-        return Response.status(201).entity(entity).header("Access-Control-Allow-Origin", "*").build();
+        if(items == null){
+            return Response.status(404).build();
+        } else {
+            GenericEntity<List<Item>> entity = new GenericEntity<List<Item>>(items) {
+            };
+            return Response.status(201).entity(entity).header("Access-Control-Allow-Origin", "*").build();
+        }
     }
 
    @GET
    @ApiOperation(value="get an specific item", notes="get an specific item")
    @ApiResponses(value={
            @ApiResponse(code = 201, message = "Successful", response = Item.class, responseContainer = "List"),
+           @ApiResponse(code = 404, message = "Not Found.")
    })
    @Path("/{itemID}")
    @Produces(MediaType.APPLICATION_JSON)
    public Response getItem(@PathParam("itemID") String itemID){
         Item entity = this.manager.getItem(itemID);
-        return Response.status(201).entity(entity).build();
+        if(entity == null){
+            return Response.status(404).build();
+        } else {
+            return Response.status(201).entity(entity).build();
+        }
    }
 }

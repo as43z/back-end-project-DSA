@@ -37,6 +37,7 @@ public class GameDAOImpl implements GameDAO {
 
         }
         catch (Exception e) {
+            i = null;
             e.printStackTrace();
         }
         finally {

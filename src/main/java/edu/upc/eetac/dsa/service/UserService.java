@@ -34,62 +34,82 @@ public class UserService {
     @ApiOperation(value="Get a specific user", notes="Get a specific user")
     @ApiResponses(value={
             @ApiResponse(code = 201, message = "Successful", response = User.class),
+            @ApiResponse(code = 404, message = "Not Found.")
     })
     @Path("/{userID}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getUser(@PathParam("userID") String userID){
-        logger.info("petition GET user "+ userID);
         User entity = this.manager.getUser(userID);
-        return Response.status(200).entity(entity).build();
+        if (entity.getUname() == null){
+            return Response.status(404).build();
+        } else {
+            return Response.status(200).entity(entity).build();
+        }
     }
 
     @GET
     @ApiOperation(value="Get a user inventory", notes="Get a user inventory")
     @ApiResponses(value={
             @ApiResponse(code = 201, message = "Successful", response = Inventory.class),
+            @ApiResponse(code = 404, message = "Not Found.")
     })
     @Path("/{userID}/Inventory")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getUserInventory(@PathParam("userID") String userID){
         Inventory inventory = this.manager.getUserInventory(userID);
-        return Response.status(200).entity(inventory).build();
+        if(inventory == null) {
+            return Response.status(404).build();
+        } else {
+            return Response.status(200).entity(inventory).build();
+        }
     }
 
     @GET
     @ApiOperation(value="Get a user game", notes="Get a user game")
     @ApiResponses(value={
             @ApiResponse(code = 201, message = "Successful", response = Game.class),
+            @ApiResponse(code = 404, message = "Not Found.")
     })
     @Path("/{userID}/Game")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getUserGame(@PathParam("userID") String userID){
         Game game = this.manager.getUserGame(userID);
-        return Response.status(200).entity(game).build();
+        if(game == null) {
+            return Response.status(404).build();
+        } else {
+            return Response.status(200).entity(game).build();
+        }
     }
 
     @GET
     @ApiOperation(value="Get a user achievements", notes="Get a user achievements")
     @ApiResponses(value={
             @ApiResponse(code = 201, message = "Successful", response = Achievements.class),
+            @ApiResponse(code = 404, message = "Not Found.")
     })
     @Path("/{userID}/Achievements")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getUserAchievements(@PathParam("userID") String userID){
         Achievements achievements = this.manager.getUserAchievements(userID);
-        return Response.status(200).entity(achievements).build();
+        if(achievements == null){
+            return Response.status(404).build();
+        } else {
+            return Response.status(200).entity(achievements).build();
+        }
     }
 
     @PATCH
     @ApiOperation(value="Updates a User", notes="Updates a User")
     @ApiResponses(value={
             @ApiResponse(code = 201, message = "Successful", response = User.class),
+            @ApiResponse(code = 404, message = "Not Found.")
     })
     @Path("/UpdateUser")
     @Produces(MediaType.APPLICATION_JSON)
     public Response updateUser(User user){
         User u = this.manager.updateUser(user);
         if(u == null){
-            return Response.status(400).build();
+            return Response.status(404).build();
         } else {
             return Response.status(200).entity(u).build();
         }
@@ -99,6 +119,7 @@ public class UserService {
     @ApiOperation(value="Updates a Achievements", notes="Updates a Achievements")
     @ApiResponses(value={
             @ApiResponse(code = 201, message = "Successful", response = Achievements.class),
+            @ApiResponse(code = 404, message = "Not Found.")
     })
     @Path("/{userID}/UpdateAchievements")
     @Produces(MediaType.APPLICATION_JSON)
@@ -106,7 +127,7 @@ public class UserService {
         Achievements u = this.manager.updateAchievements(achievements, userID);
 
         if(u == null){
-            return Response.status(400).build();
+            return Response.status(404).build();
         } else {
             return Response.status(200).entity(u).build();
         }
@@ -116,13 +137,14 @@ public class UserService {
     @ApiOperation(value="Updates a Inventory", notes="Updates a Inventory")
     @ApiResponses(value={
             @ApiResponse(code = 201, message = "Successful", response = Inventory.class),
+            @ApiResponse(code = 404, message = "Not Found.")
     })
     @Path("/{userID}/UpdateInventory")
     @Produces(MediaType.APPLICATION_JSON)
     public Response updateUserInventory(Inventory inventory, @PathParam("userID") String userID){
         Inventory u = this.manager.updateInventory(inventory, userID);
         if(u == null){
-            return Response.status(400).build();
+            return Response.status(404).build();
         } else {
             return Response.status(200).entity(u).build();
         }
@@ -131,12 +153,16 @@ public class UserService {
     @PATCH
     @ApiOperation(value="Updates Cash", notes="Updates Cash")
     @ApiResponses(value={
-            @ApiResponse(code = 201, message = "Successful"),
+            @ApiResponse(code = 204, message = "Successful."),
+            @ApiResponse(code = 400, message = "Could not update.")
     })
     @Path("/{userID}/UpdateCash")
     @Produces(MediaType.APPLICATION_JSON)
     public Response updateUserCash(User u, @PathParam("userID") String userID){
-        this.manager.updateUserSingleElement("cash", u.getCash(), userID);
-        return Response.status(200).build();
+        if(this.manager.updateUserSingleElement("cash", u.getCash(), userID)==1) {
+            return Response.status(204).build();
+        } else {
+            return Response.status(400).build();
+        }
     }
 }

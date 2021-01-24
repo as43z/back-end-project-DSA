@@ -46,20 +46,22 @@ public class AchievementsDAOImpl implements  AchievementsDAO{
 
     @Override
     public Achievements updateAchievements(String ID,int calcAch, int electronicsAch, int commsAch, int oescAch, int dsaAch, int aeroAch, int tfgAch) {
-        Achievements achievements = this.getAchievements(ID);
-        achievements.setCalcAch(calcAch);
-        achievements.setElectronicsAch(electronicsAch);
-        achievements.setCommsAch(commsAch);
-        achievements.setOescAch(oescAch);
-        achievements.setDsaAch(dsaAch);
-        achievements.setAeroAch(aeroAch);
-        achievements.setTfgAch(tfgAch);
+        Achievements achievements = null;
 
         Session session = null;
         try {
+            achievements = this.getAchievements(ID);
+            achievements.setCalcAch(calcAch);
+            achievements.setElectronicsAch(electronicsAch);
+            achievements.setCommsAch(commsAch);
+            achievements.setOescAch(oescAch);
+            achievements.setDsaAch(dsaAch);
+            achievements.setAeroAch(aeroAch);
+            achievements.setTfgAch(tfgAch);
             session = FactorySession.openSession();
             session.update(achievements);
         } catch (Exception e) {
+            achievements = null;
             // LOG
         } finally {
             session.close();

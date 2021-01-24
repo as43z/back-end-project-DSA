@@ -55,21 +55,35 @@ public class ManagerImpl implements Manager{
 
     @Override
     public Inventory updateInventory(Inventory inventory, String userID) {
-        inventory.setID(this.getUserInventory(userID).getID());
-        return inManager.updateInventory(inventory);
+        Inventory i = this.getUserInventory(userID);
+        if (i == null){
+            return null;
+        } else {
+            inventory.setID(i.getID());
+            return inManager.updateInventory(inventory);
+        }
     }
 
     @Override
     public Achievements updateAchievements(Achievements achievements, String userID) {
-        achievements.setID(this.getUserAchievements(userID).getID());
-        return aManager.updateAchievements(achievements.getID(),
-                achievements.getCalcAch(), achievements.getElectronicsAch(), achievements.getCommsAch(),
-                achievements.getOescAch(), achievements.getDsaAch(), achievements.getAeroAch(), achievements.getTfgAch());
+        Achievements ach = this.getUserAchievements(userID);
+        if(ach == null){
+            return null;
+        } else {
+            achievements.setID(this.getUserAchievements(userID).getID());
+            return aManager.updateAchievements(achievements.getID(),
+                    achievements.getCalcAch(), achievements.getElectronicsAch(), achievements.getCommsAch(),
+                    achievements.getOescAch(), achievements.getDsaAch(), achievements.getAeroAch(), achievements.getTfgAch());
+        }
     }
 
     @Override
-    public void updateUserSingleElement(String prop, Object value, String ID) {
-        this.uManager.updateSingleElement(prop, value, ID);
+    public int updateUserSingleElement(String prop, Object value, String ID) {
+        if ((this.uManager.updateSingleElement(prop, value, ID) == 1)&&(this.getUser(ID).getUname()!=null)){
+            return 1;
+        } else {
+            return 0;
+        }
     }
 
     /**
@@ -239,18 +253,27 @@ public class ManagerImpl implements Manager{
     @Override
     public Inventory getUserInventory(String userID) {
         Game g = this.getUserGame(userID);
+        if(g == null){
+            return null;
+        }
         return inManager.getInventory(g.getIdObjects());
     }
 
     @Override
     public Game getUserGame(String userID) {
         User u = this.getUser(userID);
+        if((u == null)||(u.getUname() == null)){
+            return null;
+        }
         return gManager.getGame(u.getIdGame());
     }
 
     @Override
     public Achievements getUserAchievements(String userID) {
         Game g = this.getUserGame(userID);
+        if (g == null){
+            return null;
+        }
         return aManager.getAchievements(g.getIdAchievements());
     }
 
