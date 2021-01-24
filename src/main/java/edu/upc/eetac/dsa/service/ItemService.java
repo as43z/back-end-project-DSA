@@ -34,10 +34,10 @@ public class ItemService {
         if (this.manager.getItems().size() == 0)
         {
             //Adding Items
-            this.manager.registerItem("item_01", "item_01", "item_01","item_01",2,1,"item_01");
-            this.manager.registerItem("item_02", "item_02", "item_02","item_02",2,1,"item_02");
-            this.manager.registerItem("item_03", "item_03", "item_03,","item_03",2,1,"item_03");
-            this.manager.registerItem("item_04", "item_04", "item_04","item_04",2,1,"item_04");
+            this.manager.registerItem("item_01", "item_01", "item_01",1,"e");
+            this.manager.registerItem("item_02", "item_02", "item_02",2,"2");
+            this.manager.registerItem("item_03", "item_03", "item_03,",3,"2");
+            this.manager.registerItem("item_04", "item_04", "item_04",4,"2");
         }
     }
 
