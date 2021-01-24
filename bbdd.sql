@@ -34,10 +34,8 @@ CREATE TABLE Achievements (
 
 CREATE TABLE Game (
     ID TEXT NOT NULL,
-    idQualities TEXT NOT NULL,
     idObjects TEXT NOT NULL,
-    idAchievements TEXT NOT NULL,
-    idMap TEXT NOT NULL
+    idAchievements TEXT NOT NULL
 );
 
 CREATE TABLE Inventory (

@@ -4,6 +4,7 @@ import edu.upc.eetac.dsa.FactorySession;
 import edu.upc.eetac.dsa.Session;
 import edu.upc.eetac.dsa.models.Achievements;
 import edu.upc.eetac.dsa.models.Game;
+import edu.upc.eetac.dsa.models.User;
 
 import java.util.List;
 
@@ -44,25 +45,40 @@ public class AchievementsDAOImpl implements  AchievementsDAO{
     }
 
     @Override
-    public Achievements updateAchievements(Achievements ach) {
-        Session session =  null;
+    public void updateAchievements(String ID,int calcAch, int electronicsAch, int commsAch, int oescAch, int dsaAch, int aeroAch, int tfgAch) {
+        Achievements achievements = this.getAchievements(ID);
+        achievements.setCalcAch(calcAch);
+        achievements.setElectronicsAch(electronicsAch);
+        achievements.setCommsAch(commsAch);
+        achievements.setOescAch(oescAch);
+        achievements.setDsaAch(dsaAch);
+        achievements.setAeroAch(aeroAch);
+        achievements.setTfgAch(tfgAch);
 
-        try{
+        Session session = null;
+        try {
             session = FactorySession.openSession();
-            session.save(ach);
-        }
-        catch(Exception ex){
-            ex.printStackTrace();
-        }
-        finally {
+            session.update(Achievements.class);
+        } catch (Exception e) {
+            // LOG
+        } finally {
             session.close();
         }
-        return ach;
     }
 
     @Override
     public void deleteAchievements(String achievementsID) {
-
+        Achievements achievements = this.getAchievements(achievementsID);
+        Session session = null;
+        try {
+            session = FactorySession.openSession();
+            session.delete(Achievements.class);
+        }
+        catch (Exception e) {
+        }
+        finally {
+            session.close();
+        }
     }
 
     @Override

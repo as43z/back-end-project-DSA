@@ -1,5 +1,6 @@
 package edu.upc.eetac.dsa.utils;
 
+import edu.upc.eetac.dsa.models.Maps;
 import edu.upc.eetac.dsa.models.User;
 import edu.upc.eetac.dsa.*;
 import org.apache.log4j.Logger;
@@ -10,12 +11,11 @@ public class UserDAOImpl implements UserDAO {
     private static final Logger log = Logger.getLogger(UserDAOImpl.class);
 
     @Override
-    public String addUser(String userID, String uname, String pswrd, String email) {
+    public String addUser(User u) {
         Session session = null;
 
         try {
             session = FactorySession.openSession();
-            User u = new User(userID, uname, pswrd, email);
             session.save(u);
         }
         catch (Exception e) {
@@ -24,7 +24,7 @@ public class UserDAOImpl implements UserDAO {
         finally {
             session.close();
         }
-        return userID;
+        return u.getID();
     }
 
     @Override
@@ -46,19 +46,24 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public User updateUser(User u) {
+    public void updateUser(String ID, String uname, String pswrd, String email,String idGame, int cash) {
+
+        User u = this.getUser(ID);
+        u.setUname(uname);
+        u.setPswrd(pswrd);
+        u.setEmail(email);
+        u.setIdGame(idGame);
+        u.setCash(cash);
+
         Session session = null;
         try {
             session = FactorySession.openSession();
-            session.update(u);
-        }
-        catch (Exception e) {
+            session.update(User.class);
+        } catch (Exception e) {
             // LOG
-        }
-        finally {
+        } finally {
             session.close();
         }
-        return u;
     }
 
     @Override
@@ -75,7 +80,6 @@ public class UserDAOImpl implements UserDAO {
         finally {
             session.close();
         }
-
     }
 
     @Override

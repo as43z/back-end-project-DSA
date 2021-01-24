@@ -18,14 +18,14 @@ public interface Manager {
 
     // gets
     public Item getItem(String itemID);
-    public Maps getMap(String MapID);
+    public Maps getMaps(String MapID);
     public User getUser(String uname);
     public Inventory getUserInventory(String userID);
     public Game getUserGame(String userID);
     public Achievements getUserAchievements(String userID);
     public LinkedList<Item> getItems();
     public LinkedList<User> getUsers();
-    public LinkedList<Maps> getMaps();
+    public LinkedList<Maps> getMapsList();
 
     // updates
     public User updateUser(User user);

@@ -35,7 +35,7 @@ public class MapsService
         PropertyConfigurator.configure("src/main/resources/log4j.properties");
         this.manager = ManagerImpl.getInstance();
 
-        if (this.manager.getMaps().size() == 0)
+        if (this.manager.getMapsList().size() == 0)
         {
             //Adding Maps
             this.manager.registerMap("1","Resa", "test");
@@ -56,21 +56,21 @@ public class MapsService
     @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getMaps(){
-        List<Maps> maps = this.manager.getMaps();
+        List<Maps> maps = this.manager.getMapsList();
         GenericEntity<List<Maps>> entity = new GenericEntity<List<Maps>>(maps){};
         return Response.status(201).entity(entity).header("Access-Control-Allow-Origin", "*").build();
     }
 
     //
     @GET
-    @ApiOperation(value="get a map", notes="get a map")
+    @ApiOperation(value="Get a map", notes="Get a map")
     @ApiResponses(value={
             @ApiResponse(code = 201, message = "Successful", response = Maps.class, responseContainer = "List"),
     })
     @Path("/{mapID}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getMap(@PathParam("mapID") String MapID){
-        Maps entity = this.manager.getMap(MapID);
+        Maps entity = this.manager.getMaps(MapID);
         return Response.status(201).entity(entity).build();
     }
 }

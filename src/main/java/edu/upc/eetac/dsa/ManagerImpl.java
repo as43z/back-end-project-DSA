@@ -6,14 +6,17 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
-import edu.upc.eetac.dsa.utils.ItemDAOImpl;
-import edu.upc.eetac.dsa.utils.UserDAOImpl;
+import edu.upc.eetac.dsa.utils.*;
 import org.apache.log4j.Logger;
 
 public class ManagerImpl implements Manager{
     private static final Logger log = Logger.getLogger(ManagerImpl.class);
     private UserDAOImpl uManager = new UserDAOImpl();
     private ItemDAOImpl iManager = new ItemDAOImpl();
+    private MapsDAOImpl mManager = new MapsDAOImpl();
+    private GameDAOImpl gManager = new GameDAOImpl();
+    private InventoryDAOImpl inManager = new InventoryDAOImpl();
+    private AchievementsDAOImpl aManager = new AchievementsDAOImpl();
 
     private HashMap<String, User> userList;
 
@@ -41,8 +44,8 @@ public class ManagerImpl implements Manager{
     }
 
     @Override
-    public LinkedList<Maps> getMaps() {
-        return null;
+    public LinkedList<Maps> getMapsList() {
+        return new LinkedList<>(mManager.getMapsList());
     }
 
     @Override
@@ -75,7 +78,9 @@ public class ManagerImpl implements Manager{
         while(found == 0){
             log.info(uList.get(i).getUname() + " " + uname + " " + uList.get(i).getPswrd() + " " + pswrd + " " + i);
             if(uList.get(i).getUname().equals(uname)&&uList.get(i).getPswrd().equals(pswrd)){
+                log.info("id of user " + uList.get(i).getID());
                 u = uList.get(i);
+                log.info("id of user " + u.getID());
                 found = 1;
             }
             i++;
@@ -102,7 +107,17 @@ public class ManagerImpl implements Manager{
             //si no hay usuarios añadelo
             log.info("No users, adding one.");
             u = new User(uname, pswrd, email);
-            uManager.addUser(u.getID(), u.getUname(), u.getPswrd(), u.getEmail());
+            Inventory i = new Inventory(0,0,0,0,0,0,0,
+                    0, 0, 0, 0, 0, 0);
+            Achievements a = new Achievements(0,0,0,0,0,0,0);
+            Maps m = new Maps("1","Lago","2");
+            Game g = new Game(i.getID(), a.getID(),m.getID());
+            u.setCash(0);
+            u.setIdGame(g.getID());
+            inManager.addInventory(i);
+            aManager.addAchievements(a);
+            gManager.addGame(g);
+            uManager.addUser(u);
         } else {
             log.info("List already has users.");
             User u2 = null;
@@ -120,7 +135,17 @@ public class ManagerImpl implements Manager{
             if(u2 == null){
                 log.info("User, does not exist. Adding User");
                 u = new User(uname, pswrd, email);
-                uManager.addUser(u.getID(), u.getUname(), u.getPswrd(), u.getEmail());
+                Inventory i = new Inventory(0,0,0,0,0,0,0,
+                        0, 0, 0, 0, 0, 0);
+                Achievements a = new Achievements(0,0,0,0,0,0,0);
+                Maps m = new Maps("1","Lago","2");
+                Game g = new Game(i.getID(), a.getID(),m.getID());
+                u.setCash(0);
+                u.setIdGame(g.getID());
+                uManager.addUser(u);
+                inManager.addInventory(i);
+                aManager.addAchievements(a);
+                gManager.addGame(g);
             }
         }
 
@@ -160,8 +185,30 @@ public class ManagerImpl implements Manager{
     }
 
     @Override
-    public Maps registerMap(String ID, String name, String vectMap) {
+    public Maps registerMap(String MapsID, String name, String vectMap) {
+        Maps i = null;
+        List<Maps> mList = mManager.getMapsList();
 
+        if(mList.size() == 0){
+            i = new Maps(MapsID,name,vectMap);
+            mManager.addMaps(i);
+        }
+        else {
+            Maps i2 = null;
+            for (Maps maps : mList) {
+                if (maps.getName().equals(name)) {
+                    i2 = maps;
+                } else if (maps.getID().equals(MapsID)){
+                    i2 = maps;
+                }
+            }
+
+            if (i2 == null) {
+                i = new Maps(MapsID,name,vectMap);
+                mManager.addMaps(i);
+            }
+        }
+        return i;
     }
 
     @Override
@@ -170,26 +217,29 @@ public class ManagerImpl implements Manager{
     }
 
     @Override
-    public Maps getMap(String MapID) {this. }
+    public Maps getMaps(String MapID) {
+        return mManager.getMaps(MapID);
+    }
 
     @Override
     public User getUser(String ID) {
+        log.info("Searching user " + ID);
         return uManager.getUser(ID);
     }
 
     @Override
     public Inventory getUserInventory(String userID) {
-        return null;
+        return inManager.getInventory(userID);
     }
 
     @Override
     public Game getUserGame(String userID) {
-        return null;
+        return gManager.getGame(userID);
     }
 
     @Override
     public Achievements getUserAchievements(String userID) {
-        return null;
+        return aManager.getAchievements(userID);
     }
 
     @Override

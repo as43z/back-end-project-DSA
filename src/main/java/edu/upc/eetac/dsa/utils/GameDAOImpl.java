@@ -2,6 +2,7 @@ package edu.upc.eetac.dsa.utils;
 import edu.upc.eetac.dsa.FactorySession;
 import edu.upc.eetac.dsa.Session;
 import edu.upc.eetac.dsa.models.Game;
+import edu.upc.eetac.dsa.models.Inventory;
 import edu.upc.eetac.dsa.models.Item;
 
 import java.util.List;
@@ -45,13 +46,39 @@ public class GameDAOImpl implements GameDAO {
     }
 
     @Override
-    public void updateGame(String ID, String idQualities, String idObjects, String idAchievements, String idMap) {
+    public void updateGame(String ID,String idObjects, String idAchievements, String idMap)
+    {
+        Game game= this.getGame(ID);
+        game.setIdObjects(idObjects);
+        game.setIdAchievements(idObjects);
+        game.setIdMap(idMap);
 
+        Session session = null;
+        try {
+            session = FactorySession.openSession();
+            session.update(Game.class);
+        }
+        catch (Exception e) {
+            // LOG
+        }
+        finally {
+            session.close();
+        }
     }
 
     @Override
     public void deleteGame(String gameID) {
-
+        Game game= this.getGame(gameID);
+        Session session = null;
+        try {
+            session = FactorySession.openSession();
+            session.delete(Game.class);
+        }
+        catch (Exception e) {
+        }
+        finally {
+            session.close();
+        }
     }
 
     @Override

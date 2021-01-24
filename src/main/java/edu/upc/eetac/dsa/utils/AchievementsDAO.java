@@ -7,7 +7,7 @@ import java.util.List;
 public interface AchievementsDAO {
     Achievements addAchievements(Achievements achievements);
     Achievements getAchievements(String achievementsID);
-    Achievements updateAchievements(Achievements achievements);
+    void updateAchievements(String ID,int calcAch, int electronicsAch, int commsAch, int oescAch, int dsaAch, int aeroAch, int tfgAch);
     void deleteAchievements(String achievementsID);
     List<Achievements> getAchievementsList();
 }

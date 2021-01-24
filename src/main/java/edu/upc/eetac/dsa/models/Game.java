@@ -1,23 +1,33 @@
 package edu.upc.eetac.dsa.models;
 
+import edu.upc.eetac.dsa.utils.RandomUtils;
+
 public class Game {
     private String ID;
     private String idObjects;
     private String idAchievements;
     private String idMap;
 
-    public Game(String ID, String idObjects, String idAchievements, String idMap) {
+    public Game(String idObjects, String idAchievements,String idMap) {
+        this.ID = RandomUtils.getRandID();
+        this.idObjects = idObjects;
+        this.idAchievements = idAchievements;
+        this.idMap = idMap;
+
+    }
+
+    public Game(String ID, String idObjects, String idAchievements,String idMap) {
         this.ID = ID;
         this.idObjects = idObjects;
         this.idAchievements = idAchievements;
         this.idMap = idMap;
     }
 
-    public String getId() {
+    public String getID() {
         return ID;
     }
 
-    public void setId(String ID) {
+    public void setID(String ID) {
         this.ID = ID;
     }
 
