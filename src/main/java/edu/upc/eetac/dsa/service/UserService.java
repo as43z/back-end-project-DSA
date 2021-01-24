@@ -23,11 +23,11 @@ import java.util.List;
 @Api(value = "/User", description = "Endpoint to User Service")
 @Path("/User")
 public class UserService {
-    static final Logger logger = Logger.getLogger(AuthenticationService.class);
+    static final Logger logger = Logger.getLogger(UserService.class);
     private Manager manager;
 
     public UserService(){
-
+        this.manager = ManagerImpl.getInstance();
     }
 
     @GET
@@ -38,6 +38,7 @@ public class UserService {
     @Path("/{userID}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getUser(@PathParam("userID") String userID){
+        logger.info("petition GET user "+ userID);
         User entity = this.manager.getUser(userID);
         return Response.status(200).entity(entity).build();
     }

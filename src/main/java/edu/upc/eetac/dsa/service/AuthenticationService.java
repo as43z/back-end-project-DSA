@@ -98,10 +98,11 @@ public class AuthenticationService
             return Response.status(400).entity(u).header("Access-Control-Allow-Origin", "*").build();
         }
 
-        if((this.manager.signIN(u.getUname(), u.getPswrd())) == null)
+        User valid = this.manager.signIN(u.getUname(), u.getPswrd());
+        if(valid == null)
         {
-            return Response.status(400).entity(u).header("Access-Control-Allow-Origin", "*").build();
+            return Response.status(400).entity(valid).header("Access-Control-Allow-Origin", "*").build();
         }
-        return Response.status(201).entity(u).header("Access-Control-Allow-Origin", "*").build();
+        return Response.status(201).entity(valid).header("Access-Control-Allow-Origin", "*").build();
     }
 }

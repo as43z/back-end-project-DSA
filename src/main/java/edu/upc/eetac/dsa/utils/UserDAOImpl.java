@@ -10,12 +10,11 @@ public class UserDAOImpl implements UserDAO {
     private static final Logger log = Logger.getLogger(UserDAOImpl.class);
 
     @Override
-    public String addUser(String userID, String uname, String pswrd, String email) {
+    public String addUser(User u) {
         Session session = null;
 
         try {
             session = FactorySession.openSession();
-            User u = new User(userID, uname, pswrd, email);
             session.save(u);
         }
         catch (Exception e) {
@@ -24,7 +23,7 @@ public class UserDAOImpl implements UserDAO {
         finally {
             session.close();
         }
-        return userID;
+        return u.getID();
     }
 
     @Override
