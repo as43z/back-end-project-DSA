@@ -6,8 +6,6 @@ public class Item {
     private String ID;
     private String name;
     private String description;
-    private String qualityUpdater;
-    private int quantityUpdater;
     private int price;
     private String image;
 
@@ -22,12 +20,10 @@ public class Item {
         this.description = description;
     }
 
-    public Item(String ID, String name, String description,String qualityUpdater, int quantityUpdater, int price, String image){
+    public Item(String ID, String name, String description, int price, String image){
         this.ID = ID;
         this.name = name;
         this.description = description;
-        this.qualityUpdater = qualityUpdater;
-        this.quantityUpdater = quantityUpdater;
         this.price = price;
         this.image = image;
     }
@@ -54,22 +50,6 @@ public class Item {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getQualityUpdater() {
-        return qualityUpdater;
-    }
-
-    public void setQualityUpdater(String qualityUpdater) {
-        this.qualityUpdater = qualityUpdater;
-    }
-
-    public int getQuantityUpdater() {
-        return quantityUpdater;
-    }
-
-    public void setQuantityUpdater(int quantityUpdater) {
-        this.quantityUpdater = quantityUpdater;
     }
 
     public int getPrice() {
