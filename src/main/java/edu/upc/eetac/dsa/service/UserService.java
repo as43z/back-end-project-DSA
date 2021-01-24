@@ -96,14 +96,14 @@ public class UserService {
     }
 
     @PATCH
-    @ApiOperation(value="Updates a Inventory", notes="Updates a Inventory")
+    @ApiOperation(value="Updates a Achievements", notes="Updates a Achievements")
     @ApiResponses(value={
-            @ApiResponse(code = 201, message = "Successful", response = Inventory.class),
+            @ApiResponse(code = 201, message = "Successful", response = Achievements.class),
     })
-    @Path("/{userID}/UpdateInventory")
+    @Path("/{userID}/UpdateAchievements")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response updateUserInventory(Inventory inventory, @PathParam("userID") String userID){
-        Inventory u = this.manager.updateInventory(inventory, userID);
+    public Response updateUserAchievements(Achievements achievements, @PathParam("userID") String userID){
+        Achievements u = this.manager.updateAchievements(achievements, userID);
 
         if(u == null){
             return Response.status(400).build();
@@ -113,15 +113,14 @@ public class UserService {
     }
 
     @PATCH
-    @ApiOperation(value="Updates a Achievements", notes="Updates a Achievements")
+    @ApiOperation(value="Updates a Inventory", notes="Updates a Inventory")
     @ApiResponses(value={
-            @ApiResponse(code = 201, message = "Successful", response = Achievements.class),
+            @ApiResponse(code = 201, message = "Successful", response = Inventory.class),
     })
-    @Path("/{userID}/UpdateAchievements")
+    @Path("/{userID}/UpdateInventory")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response updateUserAchievements(Achievements achievements, @PathParam("userID") String userID){
-        Achievements u = this.manager.updateAchievements(userID, achievements);
-
+    public Response updateUserInventory(Inventory inventory, @PathParam("userID") String userID){
+        Inventory u = this.manager.updateInventory(inventory, userID);
         if(u == null){
             return Response.status(400).build();
         } else {

@@ -50,17 +50,21 @@ public class ManagerImpl implements Manager{
 
     @Override
     public User updateUser(User user) {
-        return null;
+        return uManager.updateUser(user);
     }
 
     @Override
     public Inventory updateInventory(Inventory inventory, String userID) {
-        return null;
+        inventory.setID(this.getUserInventory(userID).getID());
+        return inManager.updateInventory(inventory);
     }
 
     @Override
-    public Achievements updateAchievements(String userID, Achievements achievements) {
-        return null;
+    public Achievements updateAchievements(Achievements achievements, String userID) {
+        achievements.setID(this.getUserAchievements(userID).getID());
+        return aManager.updateAchievements(achievements.getID(),
+                achievements.getCalcAch(), achievements.getElectronicsAch(), achievements.getCommsAch(),
+                achievements.getOescAch(), achievements.getDsaAch(), achievements.getAeroAch(), achievements.getTfgAch());
     }
 
     /**

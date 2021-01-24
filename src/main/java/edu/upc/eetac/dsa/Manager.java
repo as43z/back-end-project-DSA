@@ -30,7 +30,7 @@ public interface Manager {
     // updates
     public User updateUser(User user);
     public Inventory updateInventory(Inventory inventory, String userID);
-    public Achievements updateAchievements(String userID, Achievements achievements);
+    public Achievements updateAchievements(Achievements achievements, String userID);
 
     // teardown
     public void tearDown();

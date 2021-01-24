@@ -45,7 +45,7 @@ public class AchievementsDAOImpl implements  AchievementsDAO{
     }
 
     @Override
-    public void updateAchievements(String ID,int calcAch, int electronicsAch, int commsAch, int oescAch, int dsaAch, int aeroAch, int tfgAch) {
+    public Achievements updateAchievements(String ID,int calcAch, int electronicsAch, int commsAch, int oescAch, int dsaAch, int aeroAch, int tfgAch) {
         Achievements achievements = this.getAchievements(ID);
         achievements.setCalcAch(calcAch);
         achievements.setElectronicsAch(electronicsAch);
@@ -64,6 +64,8 @@ public class AchievementsDAOImpl implements  AchievementsDAO{
         } finally {
             session.close();
         }
+
+        return achievements;
     }
 
     @Override

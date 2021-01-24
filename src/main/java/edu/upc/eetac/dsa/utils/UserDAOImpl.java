@@ -46,24 +46,18 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public void updateUser(String ID, String uname, String pswrd, String email,String idGame, int cash) {
-
-        User u = this.getUser(ID);
-        u.setUname(uname);
-        u.setPswrd(pswrd);
-        u.setEmail(email);
-        u.setIdGame(idGame);
-        u.setCash(cash);
-
+    public User updateUser(User user) {
         Session session = null;
         try {
             session = FactorySession.openSession();
-            session.update(u);
+            session.update(user);
         } catch (Exception e) {
             // LOG
         } finally {
             session.close();
         }
+
+        return user;
     }
 
     @Override
