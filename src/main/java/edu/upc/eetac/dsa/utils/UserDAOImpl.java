@@ -57,7 +57,20 @@ public class UserDAOImpl implements UserDAO {
             session.close();
         }
 
-        return user;
+        return  user;
+    }
+
+    @Override
+    public void updateSingleElement(String prop, Object value, String ID){
+        Session session = null;
+        try {
+            session = FactorySession.openSession();
+            session.updateSingleElement(User.class, prop, ID, value);
+        } catch (Exception e) {
+            // LOG
+        } finally {
+            session.close();
+        }
     }
 
     @Override

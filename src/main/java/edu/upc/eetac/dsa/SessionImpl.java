@@ -79,6 +79,24 @@ public class SessionImpl implements Session {
         return o;
     }
 
+
+    @Override
+    public void updateSingleElement(Class c, String prop, String ID, Object value){
+        String queryUpdate = QueryHelper.queryUpdateSingleElement(c, prop);
+        PreparedStatement pstm = null;
+        try{
+            pstm = conn.prepareStatement(queryUpdate);
+
+            pstm.setObject(1, value.toString());
+            pstm.setObject(2, ID);
+
+            pstm.executeQuery();
+        } catch (Exception ex){
+            ex.printStackTrace();
+        }
+    }
+
+
     /*
     TODO:
         - Update method

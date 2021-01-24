@@ -61,4 +61,11 @@ public class QueryHelper {
 
         return query;
     }
+
+    public static String queryUpdateSingleElement(Class c, String prop){
+        String query = "UPDATE " + c.getSimpleName() + " SET ";
+        //UPDATE class SET prop=? WHERE ID=?;
+        query += prop + "=? WHERE ID=?;";
+        return query;
+    }
 }

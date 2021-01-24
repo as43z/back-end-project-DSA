@@ -31,6 +31,7 @@ public interface Manager {
     public User updateUser(User user);
     public Inventory updateInventory(Inventory inventory, String userID);
     public Achievements updateAchievements(Achievements achievements, String userID);
+    public void updateUserSingleElement(String prop, Object value, String ID);
 
     // teardown
     public void tearDown();

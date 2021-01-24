@@ -127,4 +127,16 @@ public class UserService {
             return Response.status(200).entity(u).build();
         }
     }
+
+    @PATCH
+    @ApiOperation(value="Updates Cash", notes="Updates Cash")
+    @ApiResponses(value={
+            @ApiResponse(code = 201, message = "Successful"),
+    })
+    @Path("/{userID}/UpdateCash")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response updateUserCash(User u, @PathParam("userID") String userID){
+        this.manager.updateUserSingleElement("cash", u.getCash(), userID);
+        return Response.status(200).build();
+    }
 }

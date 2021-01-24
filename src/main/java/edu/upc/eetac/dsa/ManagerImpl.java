@@ -67,6 +67,11 @@ public class ManagerImpl implements Manager{
                 achievements.getOescAch(), achievements.getDsaAch(), achievements.getAeroAch(), achievements.getTfgAch());
     }
 
+    @Override
+    public void updateUserSingleElement(String prop, Object value, String ID) {
+        this.uManager.updateSingleElement(prop, value, ID);
+    }
+
     /**
      * Funcion para loggear a un usuario.
      * @return usuario, si se ha loggeado devolverá un usuario,
