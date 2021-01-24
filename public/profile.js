@@ -4,6 +4,8 @@ $(document).ready(function(){
       window.location.replace("/");
     }
   var user = [];
+
+
   $.ajax({
       url: '/dsaApp/User/' + userId,
       dataType: 'json',
@@ -19,10 +21,10 @@ $(document).ready(function(){
           $('#email').html(templateEmail);
           $('#cash').html(templateCash);
           $('#game').html(templateGame);
-          $('#userForm').append('<input class="form-control" type="text" value="'+x.uname+'">');
-          $('#emailForm').append('<input class="form-control" type="email" value="'+x.email+'">');
-          $('#passwordForm').append('<input class="form-control" type="password" value="'+x.pswrd+'">');
-          $('#confirmPasswordForm').append('<input class="form-control" type="password" value="'+x.pswrd+'">');
+          $('#userForm').append('<input id="userNameFromForm" class="form-control" type="text" value="'+x.uname+'">');
+          $('#emailForm').append('<input id="emailFromForm" class="form-control" type="email" value="'+x.email+'">');
+          $('#passwordForm').append('<input id="passwordFromForm"class="form-control" type="password" value="'+x.pswrd+'">');
+          $('#confirmPasswordForm').append('<input id="confPasswordFromForm" class="form-control" type="password" value="'+x.pswrd+'">');
       },
       error: function(xhr,resp,text){
           alert("Error while getting the user info!");
@@ -84,6 +86,37 @@ $(document).ready(function(){
       }
     });
 
+
+  $('#buttonChanges').click(function(){
+    const user = $("#userNameFromForm").val();
+    const mail = $("#emailFromForm").val();
+    const pwd = $("#passwordFromForm").val();
+    const confPwd = $("#confPasswordFromForm").val();
+
+    if(pwd == confPwd){
+        var obj = { uname: user, pswrd: pwd, email: mail};
+        var myJSON = JSON.stringify(obj);
+        console.log(myJSON);
+        $.ajax({
+              type: 'PATCH',
+              headers: {"Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE"},
+              url: '/dsaApp/User/UpdateUser',
+              dataType: 'json',
+              data: myJSON,
+              contentType: 'application/json',
+              success: function(x) {
+                console.log(x);
+                alert("success");
+              },
+              error: function(xhr,resp,text){
+                console.log(xhr,resp,text);
+                alert("There is a problem.");
+              }
+        });
+    }
+
+
+  });
   $('#logout').click(function() {
     sessionStorage.removeItem("Nombre");
     sessionStorage.removeItem("ID");
