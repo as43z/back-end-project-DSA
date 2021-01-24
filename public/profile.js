@@ -1,5 +1,8 @@
 $(document).ready(function(){
   let userId = sessionStorage.getItem('ID');
+  if(userId == null){
+      window.location.replace("/");
+    }
   var user = [];
   $.ajax({
       url: '/dsaApp/User/' + userId,
