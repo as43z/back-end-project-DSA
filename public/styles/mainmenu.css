@@ -46,10 +46,14 @@ body {
 
 .carousel {
   height: 500px;
-  margin-bottom: 60px;
+  margin-bottom: 120px;
 }
 .carousel-caption {
   z-index: 10; /* Since positioning the image, we need to help out the caption */
+}
+
+.tablaLogros {
+    margin-top: 50px;
 }
 
 /* Declare heights because of positioning of img element */
