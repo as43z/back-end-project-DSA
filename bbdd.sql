@@ -15,8 +15,6 @@ CREATE TABLE Item (
     ID TEXT NOT NULL,
     name TEXT NOT NULL,
     description TEXT NOT NULL,
-    qualityUpdater TEXT NOT NULL,
-    quantityUpdater INT,
     price INT,
     image TEXT NOT NULL
 );

@@ -34,10 +34,20 @@ public class ItemService {
         if (this.manager.getItems().size() == 0)
         {
             //Adding Items
-            this.manager.registerItem("item_01", "item_01", "item_01",1,"e");
-            this.manager.registerItem("item_02", "item_02", "item_02",2,"2");
-            this.manager.registerItem("item_03", "item_03", "item_03,",3,"2");
-            this.manager.registerItem("item_04", "item_04", "item_04",4,"2");
+            this.manager.registerItem("o1", "Turtle", "item_01",1,"images/turtle.png");
+            this.manager.registerItem("o2", "Coffee", "item_02",2,"images/coffee.png");
+            this.manager.registerItem("o3", "RedBull", "item_03,",3,"images/redbull.png");
+            this.manager.registerItem("o4", "Pills", "item_04",4,"images/pills.png");
+            this.manager.registerItem("o5", "Sandwich", "item_05",4,"images/sandwich.png");
+            this.manager.registerItem("o6", "Calculator", "item_06",4,"images/calculator.png");
+            this.manager.registerItem("o7", "Rule", "item_07",4,"images/rule.png");
+            this.manager.registerItem("o8", "Compass", "item_08",4,"images/compass.png");
+            this.manager.registerItem("o9", "Pencil", "item_09",4,"images/pencil.png");
+            this.manager.registerItem("o10", "Glasses", "item_10",4,"images/glasses.png");
+            this.manager.registerItem("o11", "Puzzle", "item_11",4,"images/puzzle.png");
+            this.manager.registerItem("o12", "Book", "item_12",4,"images/book.png");
+            this.manager.registerItem("o13", "USB", "item_13",4,"images/usb.png");
+            this.manager.registerItem("o14", "CheatSheet", "item_14",4,"images/cheatsheet.png");
         }
     }
 
