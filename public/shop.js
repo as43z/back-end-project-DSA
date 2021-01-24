@@ -39,8 +39,6 @@ $(document).ready(function(){
       }
   });
 
-
-
   $('#logout').click(function() {
     sessionStorage.removeItem("Nombre");
     sessionStorage.removeItem("ID");
