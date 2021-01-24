@@ -3,5 +3,6 @@ $(document).ready(function(){
   $("#title").html(userName);
   $('#logout').click(function() {
     sessionStorage.removeItem("Nombre");
+    sessionStorage.removeItem("ID");
   });
 });
