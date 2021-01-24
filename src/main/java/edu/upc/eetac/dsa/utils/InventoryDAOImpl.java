@@ -4,6 +4,7 @@ import edu.upc.eetac.dsa.FactorySession;
 import edu.upc.eetac.dsa.Session;
 import edu.upc.eetac.dsa.models.Game;
 import edu.upc.eetac.dsa.models.Inventory;
+import edu.upc.eetac.dsa.models.Item;
 
 import java.util.List;
 
@@ -64,6 +65,17 @@ public class InventoryDAOImpl implements InventoryDAO {
     @Override
     public void deleteInventory(String inventoryID) {
 
+        Inventory inventory= this.getInventory(inventoryID);
+        Session session = null;
+        try {
+            session = FactorySession.openSession();
+            session.delete(Item.class);
+        }
+        catch (Exception e) {
+        }
+        finally {
+            session.close();
+        }
     }
 
     @Override

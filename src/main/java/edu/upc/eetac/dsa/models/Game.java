@@ -6,17 +6,21 @@ public class Game {
     private String ID;
     private String idObjects;
     private String idAchievements;
+    private String idMap;
 
-    public Game(String idObjects, String idAchievements) {
+    public Game(String idObjects, String idAchievements,String idMap) {
         this.ID = RandomUtils.getRandID();
         this.idObjects = idObjects;
         this.idAchievements = idAchievements;
+        this.idMap = idMap;
+
     }
 
-    public Game(String ID, String idObjects, String idAchievements) {
+    public Game(String ID, String idObjects, String idAchievements,String idMap) {
         this.ID = ID;
         this.idObjects = idObjects;
         this.idAchievements = idAchievements;
+        this.idMap = idMap;
     }
 
     public String getID() {
@@ -41,5 +45,13 @@ public class Game {
 
     public void setIdAchievements(String idAchievements) {
         this.idAchievements = idAchievements;
+    }
+
+    public String getIdMap() {
+        return idMap;
+    }
+
+    public void setIdMap(String idMap) {
+        this.idMap = idMap;
     }
 }

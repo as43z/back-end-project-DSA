@@ -110,7 +110,8 @@ public class ManagerImpl implements Manager{
             Inventory i = new Inventory(0,0,0,0,0,0,0,
                     0, 0, 0, 0, 0, 0);
             Achievements a = new Achievements(0,0,0,0,0,0,0);
-            Game g = new Game(i.getID(), a.getID());
+            Maps m = new Maps("1","Lago","2");
+            Game g = new Game(i.getID(), a.getID(),m.getID());
             u.setCash(0);
             u.setIdGame(g.getID());
             inManager.addInventory(i);
@@ -137,7 +138,8 @@ public class ManagerImpl implements Manager{
                 Inventory i = new Inventory(0,0,0,0,0,0,0,
                         0, 0, 0, 0, 0, 0);
                 Achievements a = new Achievements(0,0,0,0,0,0,0);
-                Game g = new Game(i.getID(), a.getID());
+                Maps m = new Maps("1","Lago","2");
+                Game g = new Game(i.getID(), a.getID(),m.getID());
                 u.setCash(0);
                 u.setIdGame(g.getID());
                 uManager.addUser(u);
@@ -227,17 +229,17 @@ public class ManagerImpl implements Manager{
 
     @Override
     public Inventory getUserInventory(String userID) {
-        return null;
+        return inManager.getInventory(userID);
     }
 
     @Override
     public Game getUserGame(String userID) {
-        return null;
+        return gManager.getGame(userID);
     }
 
     @Override
     public Achievements getUserAchievements(String userID) {
-        return null;
+        return aManager.getAchievements(userID);
     }
 
     @Override

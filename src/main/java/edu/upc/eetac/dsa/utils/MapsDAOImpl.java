@@ -3,7 +3,9 @@ package edu.upc.eetac.dsa.utils;
 import edu.upc.eetac.dsa.FactorySession;
 import edu.upc.eetac.dsa.Session;
 import edu.upc.eetac.dsa.models.Achievements;
+import edu.upc.eetac.dsa.models.Item;
 import edu.upc.eetac.dsa.models.Maps;
+import edu.upc.eetac.dsa.models.User;
 
 import java.util.List;
 
@@ -47,11 +49,36 @@ public class MapsDAOImpl implements MapsDAO{
     @Override
     public void updateMaps(String ID, String name, String vectMap) {
 
+        Maps map= this.getMaps(ID);
+        map.setName(name);
+        map.setVectMap(vectMap);
+
+        Session session = null;
+        try {
+            session = FactorySession.openSession();
+            session.update(Maps.class);
+        }
+        catch (Exception e) {
+            // LOG
+        }
+        finally {
+            session.close();
+        }
     }
 
     @Override
     public void deleteMaps(String mapsID) {
-
+        Maps map= this.getMaps(mapsID);
+        Session session = null;
+        try {
+            session = FactorySession.openSession();
+            session.delete(Maps.class);
+        }
+        catch (Exception e) {
+        }
+        finally {
+            session.close();
+        }
     }
 
     @Override

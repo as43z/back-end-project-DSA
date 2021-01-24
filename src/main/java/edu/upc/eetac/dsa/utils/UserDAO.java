@@ -7,7 +7,7 @@ public interface UserDAO
 {
     String addUser(User u);
     User getUser(String userID);
-    User updateUser(User u);
+    void updateUser(String ID, String uname, String pswrd, String email,String idGame, int cash);
     void deleteUser(String userID);
     List<User> getUsers();
   //  List <User> getUserByDept(int deptId);

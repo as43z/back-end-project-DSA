@@ -63,7 +63,7 @@ public class MapsService
 
     //
     @GET
-    @ApiOperation(value="get a map", notes="get a map")
+    @ApiOperation(value="Get a map", notes="Get a map")
     @ApiResponses(value={
             @ApiResponse(code = 201, message = "Successful", response = Maps.class, responseContainer = "List"),
     })
