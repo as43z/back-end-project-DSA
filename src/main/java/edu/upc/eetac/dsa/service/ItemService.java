@@ -38,16 +38,15 @@ public class ItemService {
             this.manager.registerItem("o2", "Coffee", "item_02",2,"images/coffee.png");
             this.manager.registerItem("o3", "RedBull", "item_03,",3,"images/redbull.png");
             this.manager.registerItem("o4", "Pills", "item_04",4,"images/pills.png");
-            this.manager.registerItem("o5", "Sandwich", "item_05",4,"images/sandwich.png");
-            this.manager.registerItem("o6", "Calculator", "item_06",4,"images/calculator.png");
-            this.manager.registerItem("o7", "Rule", "item_07",4,"images/rule.png");
-            this.manager.registerItem("o8", "Compass", "item_08",4,"images/compass.png");
-            this.manager.registerItem("o9", "Pencil", "item_09",4,"images/pencil.png");
-            this.manager.registerItem("o10", "Glasses", "item_10",4,"images/glasses.png");
-            this.manager.registerItem("o11", "Puzzle", "item_11",4,"images/puzzle.png");
-            this.manager.registerItem("o12", "Book", "item_12",4,"images/book.png");
-            this.manager.registerItem("o13", "USB", "item_13",4,"images/usb.png");
-            this.manager.registerItem("o14", "CheatSheet", "item_14",4,"images/cheatsheet.png");
+            this.manager.registerItem("o5", "Calculator", "item_05",4,"images/calculator.png");
+            this.manager.registerItem("o6", "Rule", "item_06",4,"images/rule.png");
+            this.manager.registerItem("o7", "Compas", "item_07",4,"images/compas.png");
+            this.manager.registerItem("o8", "Pencil", "item_08",4,"images/pencil.png");
+            this.manager.registerItem("o9", "Glasses", "item_09",4,"images/glasses.png");
+            this.manager.registerItem("o10", "Puzzle", "item_10",4,"images/puzzle.png");
+            this.manager.registerItem("o11", "Book", "item_11",4,"images/book.png");
+            this.manager.registerItem("o12", "USB", "item_12",4,"images/usb.png");
+            this.manager.registerItem("o13", "CheatSheet", "item_13",4,"images/cheatsheet.png");
         }
     }
 

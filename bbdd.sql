@@ -45,7 +45,7 @@ CREATE TABLE Inventory (
     pillsQuantity INT,
     calculatorQuantity INT,
     ruleQuantity INT,
-    compassQuantity INT,
+    compasQuantity INT,
     pencilQuantity INT,
     glassesQuantity INT,
     puzzleQuantity INT,

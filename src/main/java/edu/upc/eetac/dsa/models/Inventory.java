@@ -10,7 +10,7 @@ public class Inventory {
     private int pillsQuantity;
     private int calculatorQuantity;
     private int ruleQuantity;
-    private int compassQuantity;
+    private int compasQuantity;
     private int pencilQuantity;
     private int glassesQuantity;
     private int puzzleQuantity;
@@ -21,7 +21,7 @@ public class Inventory {
     public Inventory() {
     }
 
-    public Inventory(int turtleQuantity, int coffQuantity, int redbullQuantity, int pillsQuantity, int calculatorQuantity, int ruleQuantity, int compassQuantity, int pencilQuantity, int glassesQuantity, int puzzleQuantity, int bookQuantity, int usbQuantity, int cheatQuantity) {
+    public Inventory(int turtleQuantity, int coffQuantity, int redbullQuantity, int pillsQuantity, int calculatorQuantity, int ruleQuantity, int compasQuantity, int pencilQuantity, int glassesQuantity, int puzzleQuantity, int bookQuantity, int usbQuantity, int cheatQuantity) {
         this.ID = RandomUtils.getRandID();
         this.turtleQuantity = turtleQuantity;
         this.coffQuantity = coffQuantity;
@@ -29,7 +29,7 @@ public class Inventory {
         this.pillsQuantity = pillsQuantity;
         this.calculatorQuantity = calculatorQuantity;
         this.ruleQuantity = ruleQuantity;
-        this.compassQuantity = compassQuantity;
+        this.compasQuantity = compasQuantity;
         this.pencilQuantity = pencilQuantity;
         this.glassesQuantity = glassesQuantity;
         this.puzzleQuantity = puzzleQuantity;
@@ -38,7 +38,7 @@ public class Inventory {
         this.cheatQuantity = cheatQuantity;
     }
 
-    public Inventory(String ID, int turtleQuantity, int coffQuantity, int redbullQuantity, int pillsQuantity, int calculatorQuantity, int ruleQuantity, int compassQuantity, int pencilQuantity, int glassesQuantity, int puzzleQuantity, int bookQuantity, int usbQuantity, int cheatQuantity) {
+    public Inventory(String ID, int turtleQuantity, int coffQuantity, int redbullQuantity, int pillsQuantity, int calculatorQuantity, int ruleQuantity, int compasQuantity, int pencilQuantity, int glassesQuantity, int puzzleQuantity, int bookQuantity, int usbQuantity, int cheatQuantity) {
         this.ID = ID;
         this.turtleQuantity = turtleQuantity;
         this.coffQuantity = coffQuantity;
@@ -46,7 +46,7 @@ public class Inventory {
         this.pillsQuantity = pillsQuantity;
         this.calculatorQuantity = calculatorQuantity;
         this.ruleQuantity = ruleQuantity;
-        this.compassQuantity = compassQuantity;
+        this.compasQuantity = compasQuantity;
         this.pencilQuantity = pencilQuantity;
         this.glassesQuantity = glassesQuantity;
         this.puzzleQuantity = puzzleQuantity;
@@ -111,12 +111,12 @@ public class Inventory {
         this.ruleQuantity = ruleQuantity;
     }
 
-    public int getCompassQuantity() {
-        return compassQuantity;
+    public int getCompasQuantity() {
+        return compasQuantity;
     }
 
-    public void setCompassQuantity(int compassQuantity) {
-        this.compassQuantity = compassQuantity;
+    public void setCompasQuantity(int compasQuantity) {
+        this.compasQuantity = compasQuantity;
     }
 
     public int getPencilQuantity() {
