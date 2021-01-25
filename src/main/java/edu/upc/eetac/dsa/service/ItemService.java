@@ -34,19 +34,19 @@ public class ItemService {
         if (this.manager.getItems().size() == 0)
         {
             //Adding Items
-            this.manager.registerItem("o1", "Turtle", "item_01",1,"images/turtle.png");
-            this.manager.registerItem("o2", "Coffee", "item_02",2,"images/coffee.png");
-            this.manager.registerItem("o3", "RedBull", "item_03,",3,"images/redbull.png");
-            this.manager.registerItem("o4", "Pills", "item_04",4,"images/pills.png");
-            this.manager.registerItem("o5", "Calculator", "item_05",4,"images/calculator.png");
-            this.manager.registerItem("o6", "Rule", "item_06",4,"images/rule.png");
-            this.manager.registerItem("o7", "Compas", "item_07",4,"images/compas.png");
-            this.manager.registerItem("o8", "Pencil", "item_08",4,"images/pencil.png");
-            this.manager.registerItem("o9", "Glasses", "item_09",4,"images/glasses.png");
-            this.manager.registerItem("o10", "Puzzle", "item_10",4,"images/puzzle.png");
-            this.manager.registerItem("o11", "Book", "item_11",4,"images/book.png");
-            this.manager.registerItem("o12", "USB", "item_12",4,"images/usb.png");
-            this.manager.registerItem("o13", "CheatSheet", "item_13",4,"images/cheatsheet.png");
+            this.manager.registerItem("o1", "Turtle", "Esta tortuga vive en mitad de nuestro campus universatio y es necesaria para aprobar DSA",300,"images/turtle.png");
+            this.manager.registerItem("o2", "Coffee", "Café para combatir el sueño después del almuerzo",2,"images/coffee.png");
+            this.manager.registerItem("o3", "RedBull", "Necesario para soportar una semana intensa de exámenes finales,",5,"images/redbull.png");
+            this.manager.registerItem("o4", "Pills", "Por si con el Redbull no te es suficiente o simplemente para un dolor de cabeza",200,"images/pills.png");
+            this.manager.registerItem("o5", "Calculator", "No siempre te será útil pero viene bien tenerla a mano",40,"images/calculator.png");
+            this.manager.registerItem("o6", "Rule", "Necesaria si la mano alzada no es tu fuerte",2,"images/rule.png");
+            this.manager.registerItem("o7", "Compas", "Para cuando necesites precisión",5,"images/compas.png");
+            this.manager.registerItem("o8", "Pencil", "¡Cuidado! No te vale para todas las asignaturas",3,"images/pencil.png");
+            this.manager.registerItem("o9", "Glasses", "Si estás en última fila te serán de gran ayuda",60,"images/glasses.png");
+            this.manager.registerItem("o10", "Puzzle", "Entretenimiento para desconectar de los exámenes",15,"images/puzzle.png");
+            this.manager.registerItem("o11", "Book", "Te puede servir de pisapapeles",30,"images/book.png");
+            this.manager.registerItem("o12", "USB", "Contiene información confidencial",100,"images/usb.png");
+            this.manager.registerItem("o13", "CheatSheet", "Permitido su uso en casos excepcionales",1000,"images/cheatsheet.png");
         }
     }
 
