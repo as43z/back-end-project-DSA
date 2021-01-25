@@ -37,7 +37,7 @@ $(document).ready(function(){
     contentType: 'application/json',
     success: function(x) {
         console.log(x);
-        $('#inventoryTable').append('<tbody><tr><td>Turtle: '+ x.turtleQuantity +' items.</td></tr><tr><td>Coffee: '+ x.coffQuantity +' items.</td></tr><tr><td>RedBull: '+ x.redbullQuantity +' items.</td></tr><tr><td>Pills: '+ x.pillsQuantity +' items.</td></tr><tr><td>Calculator: '+ x.calculatorQuantity +' items.</td></tr><tr><td>Rule: '+ x.ruleQuantity +' items.</td></tr><tr><td>Compas: '+ x.compassQuantity +' items.</td></tr><tr><td>Pencil: '+ x.pencilQuantity +' items.</td></tr><tr><td>Glasses: '+ x.glassesQuantity +' items.</td></tr><tr><td>Puzzle: '+ x.puzzleQuantity +' items.</td></tr><tr><td>Book: '+ x.bookQuantity +' items.</td></tr><tr><td>USB: '+ x.usbQuantity +' items.</td></tr><tr><td>Cheat sheet: '+ x.cheatQuantity +' items.</td></tr></tbody>');
+        $('#inventoryTable').append('<tbody><tr><td>Turtle: '+ x.turtleQuantity +' items.</td></tr><tr><td>Coffee: '+ x.coffQuantity +' items.</td></tr><tr><td>RedBull: '+ x.redbullQuantity +' items.</td></tr><tr><td>Pills: '+ x.pillsQuantity +' items.</td></tr><tr><td>Calculator: '+ x.calculatorQuantity +' items.</td></tr><tr><td>Rule: '+ x.ruleQuantity +' items.</td></tr><tr><td>Compas: '+ x.compasQuantity +' items.</td></tr><tr><td>Pencil: '+ x.pencilQuantity +' items.</td></tr><tr><td>Glasses: '+ x.glassesQuantity +' items.</td></tr><tr><td>Puzzle: '+ x.puzzleQuantity +' items.</td></tr><tr><td>Book: '+ x.bookQuantity +' items.</td></tr><tr><td>USB: '+ x.usbQuantity +' items.</td></tr><tr><td>Cheat sheet: '+ x.cheatQuantity +' items.</td></tr></tbody>');
     },
     error: function(xhr,resp,text){
         alert("Error while getting the inventory info!");
