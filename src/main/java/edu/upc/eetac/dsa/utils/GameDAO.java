@@ -7,7 +7,7 @@ import java.util.List;
 public interface GameDAO {
     Game addGame(Game game);
     Game getGame(String gameID);
-    void updateGame(String ID, String idObjects, String idAchievements, String idMap);
+    Game updateGame(String ID, String idObjects, String idAchievements, String idMap);
     void deleteGame(String gameID);
     List<Game> getGames();
 }

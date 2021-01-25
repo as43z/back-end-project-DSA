@@ -165,4 +165,38 @@ public class UserService {
             return Response.status(400).build();
         }
     }
+
+    @PATCH
+    @ApiOperation(value="Updates Map", notes="Updates Map")
+    @ApiResponses(value={
+            @ApiResponse(code = 204, message = "Successful."),
+            @ApiResponse(code = 400, message = "Could not update.")
+    })
+    @Path("/{userID}/UpdateMap")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response updateUserMap(@PathParam("userID") String userID, Maps map){
+        logger.info(map.getID() + " " + map.getName());
+        if(this.manager.updateUserMap(userID, map.getID()) != null) {
+            return Response.status(204).build();
+        } else {
+            return Response.status(400).build();
+        }
+    }
+
+    @GET
+    @ApiOperation(value="reboot game", notes="reboot game")
+    @ApiResponses(value={
+            @ApiResponse(code = 204, message = "Successful"),
+            @ApiResponse(code = 400, message = "Not Found.")
+    })
+    @Path("/{userID}/RestoreGame")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response restoreUserGame(@PathParam("userID") String userID){
+        User u = this.manager.reiniciarGame(userID);
+        if(u == null) {
+            return Response.status(404).build();
+        } else {
+            return Response.status(200).build();
+        }
+    }
 }

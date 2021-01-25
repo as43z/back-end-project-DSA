@@ -28,10 +28,13 @@ public interface Manager {
     public LinkedList<Maps> getMapsList();
 
     // updates
+    public Game updateGame(Game game);
     public User updateUser(User user);
     public Inventory updateInventory(Inventory inventory, String userID);
     public Achievements updateAchievements(Achievements achievements, String userID);
     public int updateUserSingleElement(String prop, Object value, String ID);
+    public User reiniciarGame(String userID);
+    public User updateUserMap(String userID, String mapID);
 
     // teardown
     public void tearDown();

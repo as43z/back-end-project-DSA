@@ -7,6 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import edu.upc.eetac.dsa.utils.*;
+import io.swagger.models.auth.In;
 import org.apache.log4j.Logger;
 
 public class ManagerImpl implements Manager{
@@ -46,6 +47,12 @@ public class ManagerImpl implements Manager{
     @Override
     public LinkedList<Maps> getMapsList() {
         return new LinkedList<>(mManager.getMapsList());
+    }
+
+    @Override
+    public Game updateGame(Game game) {
+        return this.gManager.updateGame(game.getID(), game.getIdObjects(),
+                game.getIdAchievements(), game.getIdMap());
     }
 
     @Override
@@ -112,6 +119,44 @@ public class ManagerImpl implements Manager{
         }
     }
 
+    @Override
+    public User reiniciarGame(String userID) {
+        User u = this.getUser(userID);
+        if(u == null) {
+            return null;
+        } else {
+            this.updateUserSingleElement("cash", 20, userID);
+            Game g = this.getUserGame(userID);
+            Inventory i = new Inventory(this.getUserInventory(userID).getID(), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            Achievements ach = new Achievements(this.getUserAchievements(userID).getID(), 0, 0, 0, 0, 0, 0, 0);
+            this.updateAchievements(ach, userID);
+            this.updateInventory(i, userID);
+            log.info(g.getIdAchievements() + " " + g.getIdObjects());
+            this.updateUserMap(userID, "1");
+            return u;
+        }
+    }
+
+    @Override
+    public User updateUserMap(String userID, String mapID) {
+        User u = this.getUser(userID);
+        if(u==null) {
+            return null;
+        } else {
+            Game g = this.getUserGame(userID);
+            g.setIdMap(mapID);
+            log.info(mapID);
+            log.info(g.getIdAchievements() + " " + g.getIdObjects());
+            Game game = this.gManager.updateGame(g.getID(), g.getIdObjects(),
+                    g.getIdAchievements(), g.getIdMap());
+            log.info(g.getIdAchievements() + " " + g.getIdObjects());
+            if(game == null){
+                return null;
+            }
+            return u;
+        }
+    }
+
     /**
      * Funcion para loggear a un usuario.
      * @return usuario, si se ha loggeado devolverá un usuario,
@@ -161,7 +206,7 @@ public class ManagerImpl implements Manager{
             Achievements a = new Achievements(0,0,0,0,0,0,0);
             Maps m = new Maps("1","Lago","2");
             Game g = new Game(i.getID(), a.getID(),m.getID());
-            u.setCash(0);
+            u.setCash(20);
             u.setIdGame(g.getID());
             inManager.addInventory(i);
             aManager.addAchievements(a);
@@ -189,7 +234,7 @@ public class ManagerImpl implements Manager{
                 Achievements a = new Achievements(0,0,0,0,0,0,0);
                 Maps m = new Maps("1","Lago","2");
                 Game g = new Game(i.getID(), a.getID(),m.getID());
-                u.setCash(0);
+                u.setCash(20);
                 u.setIdGame(g.getID());
                 uManager.addUser(u);
                 inManager.addInventory(i);
