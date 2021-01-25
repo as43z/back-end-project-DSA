@@ -407,3 +407,297 @@ $(document).on('click', '#CompasClick', function(){
       $('#coins').html('<p>You have: ' + userCash + '€</p>');
   }
 });
+
+$(document).on('click', '#PencilClick', function(){
+  console.log("buying pencil....");
+  if(userCash >= mokData[7].price){
+      userCash = userCash - mokData[7].price;
+      var pencilVal = inventory[6];
+      pencilVal = pencilVal + 1;
+      inventory[6] = pencilVal;
+      var obj = {turtleQuantity: inventory[11], coffQuantity: inventory[3], redbullQuantity: inventory[9], pillsQuantity: inventory[7], calculatorQuantity: inventory[1], ruleQuantity: inventory[10], compasQuantity: inventory[4], pencilQuantity: inventory[6], glassesQuantity: inventory[5], puzzleQuantity: inventory[8], bookQuantity: inventory[0], usbQuantity: inventory[12], cheatQuantity: inventory[2], id: ""}
+      var myJSON = JSON.stringify(obj);
+
+      $.ajax({
+        type: 'PATCH',
+        headers: {"Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE"},
+        url: '/dsaApp/User/'+userId+'/UpdateInventory',
+        dataType: 'json',
+        data: myJSON,
+        contentType: 'application/json',
+        success: function(x) {
+          console.log(x);
+        },
+        error: function(xhr,resp,text){
+          console.log(xhr,resp,text);
+          alert("There is a problem.");
+        }
+      });
+
+      var obj = {cash: userCash};
+      var myJSON = JSON.stringify(obj);
+
+      $.ajax({
+        type: 'PATCH',
+        headers: {"Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE"},
+        url: '/dsaApp/User/'+userId+'/UpdateCash',
+        dataType: 'json',
+        data: myJSON,
+        contentType: 'application/json',
+        success: function(x) {
+          console.log(x);
+          alert("success");
+        },
+        error: function(xhr,resp,text){
+          console.log(xhr,resp,text);
+          alert("There is a problem.");
+        }
+      });
+      $('#coins').html('<p>You have: ' + userCash + '€</p>');
+  }
+});
+
+$(document).on('click', '#GlassesClick', function(){
+  console.log("buying glasses....");
+  if(userCash >= mokData[8].price){
+      userCash = userCash - mokData[8].price;
+      var glassesVal = inventory[5];
+      glassesVal = glassesVal + 1;
+      inventory[5] = glassesVal;
+      var obj = {turtleQuantity: inventory[11], coffQuantity: inventory[3], redbullQuantity: inventory[9], pillsQuantity: inventory[7], calculatorQuantity: inventory[1], ruleQuantity: inventory[10], compasQuantity: inventory[4], pencilQuantity: inventory[6], glassesQuantity: inventory[5], puzzleQuantity: inventory[8], bookQuantity: inventory[0], usbQuantity: inventory[12], cheatQuantity: inventory[2], id: ""}
+      var myJSON = JSON.stringify(obj);
+
+      $.ajax({
+        type: 'PATCH',
+        headers: {"Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE"},
+        url: '/dsaApp/User/'+userId+'/UpdateInventory',
+        dataType: 'json',
+        data: myJSON,
+        contentType: 'application/json',
+        success: function(x) {
+          console.log(x);
+        },
+        error: function(xhr,resp,text){
+          console.log(xhr,resp,text);
+          alert("There is a problem.");
+        }
+      });
+
+      var obj = {cash: userCash};
+      var myJSON = JSON.stringify(obj);
+
+      $.ajax({
+        type: 'PATCH',
+        headers: {"Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE"},
+        url: '/dsaApp/User/'+userId+'/UpdateCash',
+        dataType: 'json',
+        data: myJSON,
+        contentType: 'application/json',
+        success: function(x) {
+          console.log(x);
+          alert("success");
+        },
+        error: function(xhr,resp,text){
+          console.log(xhr,resp,text);
+          alert("There is a problem.");
+        }
+      });
+      $('#coins').html('<p>You have: ' + userCash + '€</p>');
+  }
+});
+
+$(document).on('click', '#PuzzleClick', function(){
+  console.log("buying puzzle....");
+  if(userCash >= mokData[9].price){
+      userCash = userCash - mokData[9].price;
+      var puzzleVal = inventory[8];
+      puzzleVal = puzzleVal + 1;
+      inventory[8] = puzzleVal;
+      var obj = {turtleQuantity: inventory[11], coffQuantity: inventory[3], redbullQuantity: inventory[9], pillsQuantity: inventory[7], calculatorQuantity: inventory[1], ruleQuantity: inventory[10], compasQuantity: inventory[4], pencilQuantity: inventory[6], glassesQuantity: inventory[5], puzzleQuantity: inventory[8], bookQuantity: inventory[0], usbQuantity: inventory[12], cheatQuantity: inventory[2], id: ""}
+      var myJSON = JSON.stringify(obj);
+
+      $.ajax({
+        type: 'PATCH',
+        headers: {"Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE"},
+        url: '/dsaApp/User/'+userId+'/UpdateInventory',
+        dataType: 'json',
+        data: myJSON,
+        contentType: 'application/json',
+        success: function(x) {
+          console.log(x);
+        },
+        error: function(xhr,resp,text){
+          console.log(xhr,resp,text);
+          alert("There is a problem.");
+        }
+      });
+
+      var obj = {cash: userCash};
+      var myJSON = JSON.stringify(obj);
+
+      $.ajax({
+        type: 'PATCH',
+        headers: {"Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE"},
+        url: '/dsaApp/User/'+userId+'/UpdateCash',
+        dataType: 'json',
+        data: myJSON,
+        contentType: 'application/json',
+        success: function(x) {
+          console.log(x);
+          alert("success");
+        },
+        error: function(xhr,resp,text){
+          console.log(xhr,resp,text);
+          alert("There is a problem.");
+        }
+      });
+      $('#coins').html('<p>You have: ' + userCash + '€</p>');
+  }
+});
+
+$(document).on('click', '#BookClick', function(){
+  console.log("buying book....");
+  if(userCash >= mokData[10].price){
+      userCash = userCash - mokData[10].price;
+      var bookVal = inventory[0];
+      bookVal = bookVal + 1;
+      inventory[0] = bookVal;
+      var obj = {turtleQuantity: inventory[11], coffQuantity: inventory[3], redbullQuantity: inventory[9], pillsQuantity: inventory[7], calculatorQuantity: inventory[1], ruleQuantity: inventory[10], compasQuantity: inventory[4], pencilQuantity: inventory[6], glassesQuantity: inventory[5], puzzleQuantity: inventory[8], bookQuantity: inventory[0], usbQuantity: inventory[12], cheatQuantity: inventory[2], id: ""}
+      var myJSON = JSON.stringify(obj);
+
+      $.ajax({
+        type: 'PATCH',
+        headers: {"Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE"},
+        url: '/dsaApp/User/'+userId+'/UpdateInventory',
+        dataType: 'json',
+        data: myJSON,
+        contentType: 'application/json',
+        success: function(x) {
+          console.log(x);
+        },
+        error: function(xhr,resp,text){
+          console.log(xhr,resp,text);
+          alert("There is a problem.");
+        }
+      });
+
+      var obj = {cash: userCash};
+      var myJSON = JSON.stringify(obj);
+
+      $.ajax({
+        type: 'PATCH',
+        headers: {"Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE"},
+        url: '/dsaApp/User/'+userId+'/UpdateCash',
+        dataType: 'json',
+        data: myJSON,
+        contentType: 'application/json',
+        success: function(x) {
+          console.log(x);
+          alert("success");
+        },
+        error: function(xhr,resp,text){
+          console.log(xhr,resp,text);
+          alert("There is a problem.");
+        }
+      });
+      $('#coins').html('<p>You have: ' + userCash + '€</p>');
+  }
+});
+
+$(document).on('click', '#USBClick', function(){
+  console.log("buying usb....");
+  if(userCash >= mokData[11].price){
+      userCash = userCash - mokData[11].price;
+      var usbVal = inventory[12];
+      usbVal = usbVal + 1;
+      inventory[12] = usbVal;
+      var obj = {turtleQuantity: inventory[11], coffQuantity: inventory[3], redbullQuantity: inventory[9], pillsQuantity: inventory[7], calculatorQuantity: inventory[1], ruleQuantity: inventory[10], compasQuantity: inventory[4], pencilQuantity: inventory[6], glassesQuantity: inventory[5], puzzleQuantity: inventory[8], bookQuantity: inventory[0], usbQuantity: inventory[12], cheatQuantity: inventory[2], id: ""}
+      var myJSON = JSON.stringify(obj);
+
+      $.ajax({
+        type: 'PATCH',
+        headers: {"Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE"},
+        url: '/dsaApp/User/'+userId+'/UpdateInventory',
+        dataType: 'json',
+        data: myJSON,
+        contentType: 'application/json',
+        success: function(x) {
+          console.log(x);
+        },
+        error: function(xhr,resp,text){
+          console.log(xhr,resp,text);
+          alert("There is a problem.");
+        }
+      });
+
+      var obj = {cash: userCash};
+      var myJSON = JSON.stringify(obj);
+
+      $.ajax({
+        type: 'PATCH',
+        headers: {"Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE"},
+        url: '/dsaApp/User/'+userId+'/UpdateCash',
+        dataType: 'json',
+        data: myJSON,
+        contentType: 'application/json',
+        success: function(x) {
+          console.log(x);
+          alert("success");
+        },
+        error: function(xhr,resp,text){
+          console.log(xhr,resp,text);
+          alert("There is a problem.");
+        }
+      });
+      $('#coins').html('<p>You have: ' + userCash + '€</p>');
+  }
+});
+
+$(document).on('click', '#CheatSheetClick', function(){
+  console.log("buying cheatsheet....");
+  if(userCash >= mokData[12].price){
+      userCash = userCash - mokData[12].price;
+      var cheatVal = inventory[2];
+      cheatVal = cheatVal + 1;
+      inventory[2] = cheatVal;
+      var obj = {turtleQuantity: inventory[11], coffQuantity: inventory[3], redbullQuantity: inventory[9], pillsQuantity: inventory[7], calculatorQuantity: inventory[1], ruleQuantity: inventory[10], compasQuantity: inventory[4], pencilQuantity: inventory[6], glassesQuantity: inventory[5], puzzleQuantity: inventory[8], bookQuantity: inventory[0], usbQuantity: inventory[12], cheatQuantity: inventory[2], id: ""}
+      var myJSON = JSON.stringify(obj);
+
+      $.ajax({
+        type: 'PATCH',
+        headers: {"Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE"},
+        url: '/dsaApp/User/'+userId+'/UpdateInventory',
+        dataType: 'json',
+        data: myJSON,
+        contentType: 'application/json',
+        success: function(x) {
+          console.log(x);
+        },
+        error: function(xhr,resp,text){
+          console.log(xhr,resp,text);
+          alert("There is a problem.");
+        }
+      });
+
+      var obj = {cash: userCash};
+      var myJSON = JSON.stringify(obj);
+
+      $.ajax({
+        type: 'PATCH',
+        headers: {"Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE"},
+        url: '/dsaApp/User/'+userId+'/UpdateCash',
+        dataType: 'json',
+        data: myJSON,
+        contentType: 'application/json',
+        success: function(x) {
+          console.log(x);
+          alert("success");
+        },
+        error: function(xhr,resp,text){
+          console.log(xhr,resp,text);
+          alert("There is a problem.");
+        }
+      });
+      $('#coins').html('<p>You have: ' + userCash + '€</p>');
+  }
+});
