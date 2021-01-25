@@ -11,7 +11,6 @@ public class User {
     private int cash;
 
     public User(){
-        this.pswrd = RandomUtils.getRandID();
         this.ID = RandomUtils.getRandID();
     }
 

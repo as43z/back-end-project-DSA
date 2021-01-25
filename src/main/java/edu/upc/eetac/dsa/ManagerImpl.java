@@ -50,6 +50,32 @@ public class ManagerImpl implements Manager{
 
     @Override
     public User updateUser(User user) {
+        log.info(user.getID());
+        log.info(user.getUname());
+        if(user.getUname() == null){
+            user.setUname(this.getUser(user.getID()).getUname());
+            log.info(user.getUname());
+        }
+        log.info(user.getPswrd());
+        if(user.getPswrd() == null){
+            user.setPswrd(this.getUser(user.getID()).getPswrd());
+            log.info(user.getPswrd());
+        }
+        log.info(user.getCash());
+        if(user.getCash() == 0){
+            user.setCash(this.getUser(user.getID()).getCash());
+            log.info(user.getCash());
+        }
+        log.info(user.getEmail());
+        if(user.getEmail() == null){
+            user.setEmail(this.getUser(user.getID()).getEmail());
+            log.info(user.getEmail());
+        }
+        log.info(user.getIdGame());
+        if(user.getIdGame() == null){
+            user.setIdGame(this.getUser(user.getID()).getIdGame());
+            log.info(user.getIdGame());
+        }
         return uManager.updateUser(user);
     }
 
