@@ -43,7 +43,7 @@ public class ItemService {
             this.manager.registerItem("o7", "Compas", "Para cuando necesites precisión.",5,"images/compas.png");
             this.manager.registerItem("o8", "Pencil", "¡Cuidado! No te vale para todas las asignaturas.",3,"images/pencil.png");
             this.manager.registerItem("o9", "Glasses", "Si estás en última fila te serán de gran ayuda.",60,"images/glasses.png");
-            this.manager.registerItem("o10", "Puzzle", "Entretenimiento para desconectar de los exámenes.",15,"images/puzzle.png");
+            this.manager.registerItem("o10", "Puzzle", "Entretenimiento para desconectar.",15,"images/puzzle.png");
             this.manager.registerItem("o11", "Book", "Te puede servir de pisapapeles.",30,"images/book.png");
             this.manager.registerItem("o12", "USB", "Contiene información confidencial.",100,"images/usb.png");
             this.manager.registerItem("o13", "CheatSheet", "Permitido su uso en casos excepcionales.",1000,"images/cheatsheet.png");
