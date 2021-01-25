@@ -94,7 +94,7 @@ $(document).ready(function(){
     const confPwd = $("#confPasswordFromForm").val();
 
     if(pwd == confPwd){
-        var obj = { uname: user, pswrd: pwd, email: mail, id: userId};
+        var obj = { uname: user, pswrd: pwd, email: mail, ID: userId};
         var myJSON = JSON.stringify(obj);
         console.log(myJSON);
         $.ajax({

@@ -112,6 +112,9 @@ $(document).on('click', '#TurtleClick', function(){
       });
       $('#coins').html('<p>You have: ' + userCash + '€</p>');
   }
+  else{
+    alert("You don't have enough money.")
+  }
 });
 
 $(document).on('click', '#CoffeeClick', function(){
@@ -160,6 +163,9 @@ $(document).on('click', '#CoffeeClick', function(){
         }
       });
       $('#coins').html('<p>You have: ' + userCash + '€</p>');
+  }
+  else{
+    alert("You don't have enough money.")
   }
 });
 
@@ -210,6 +216,9 @@ $(document).on('click', '#RedBullClick', function(){
       });
       $('#coins').html('<p>You have: ' + userCash + '€</p>');
   }
+  else{
+    alert("You don't have enough money.")
+  }
 });
 
 $(document).on('click', '#PillsClick', function(){
@@ -258,6 +267,9 @@ $(document).on('click', '#PillsClick', function(){
         }
       });
       $('#coins').html('<p>You have: ' + userCash + '€</p>');
+  }
+  else{
+    alert("You don't have enough money.")
   }
 });
 
@@ -308,6 +320,9 @@ $(document).on('click', '#CalculatorClick', function(){
       });
       $('#coins').html('<p>You have: ' + userCash + '€</p>');
   }
+  else{
+    alert("You don't have enough money.")
+  }
 });
 
 $(document).on('click', '#RuleClick', function(){
@@ -356,6 +371,9 @@ $(document).on('click', '#RuleClick', function(){
         }
       });
       $('#coins').html('<p>You have: ' + userCash + '€</p>');
+  }
+  else{
+    alert("You don't have enough money.")
   }
 });
 
@@ -406,6 +424,9 @@ $(document).on('click', '#CompasClick', function(){
       });
       $('#coins').html('<p>You have: ' + userCash + '€</p>');
   }
+  else{
+    alert("You don't have enough money.")
+  }
 });
 
 $(document).on('click', '#PencilClick', function(){
@@ -454,6 +475,9 @@ $(document).on('click', '#PencilClick', function(){
         }
       });
       $('#coins').html('<p>You have: ' + userCash + '€</p>');
+  }
+  else{
+    alert("You don't have enough money.")
   }
 });
 
@@ -504,6 +528,9 @@ $(document).on('click', '#GlassesClick', function(){
       });
       $('#coins').html('<p>You have: ' + userCash + '€</p>');
   }
+  else{
+    alert("You don't have enough money.")
+  }
 });
 
 $(document).on('click', '#PuzzleClick', function(){
@@ -552,6 +579,9 @@ $(document).on('click', '#PuzzleClick', function(){
         }
       });
       $('#coins').html('<p>You have: ' + userCash + '€</p>');
+  }
+  else{
+    alert("You don't have enough money.")
   }
 });
 
@@ -602,6 +632,9 @@ $(document).on('click', '#BookClick', function(){
       });
       $('#coins').html('<p>You have: ' + userCash + '€</p>');
   }
+  else{
+    alert("You don't have enough money.")
+  }
 });
 
 $(document).on('click', '#USBClick', function(){
@@ -651,6 +684,9 @@ $(document).on('click', '#USBClick', function(){
       });
       $('#coins').html('<p>You have: ' + userCash + '€</p>');
   }
+  else{
+    alert("You don't have enough money.")
+  }
 });
 
 $(document).on('click', '#CheatSheetClick', function(){
@@ -699,5 +735,8 @@ $(document).on('click', '#CheatSheetClick', function(){
         }
       });
       $('#coins').html('<p>You have: ' + userCash + '€</p>');
+  }
+  else{
+    alert("You don't have enough money.")
   }
 });
