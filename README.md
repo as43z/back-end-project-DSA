@@ -23,6 +23,3 @@
     - Javier
     - Renuka
 
-
-> La pistola cuando se saca es pa disparar, el que la saca pa enseñarla es un parguela
-\- Tomate, Gran Pensador de la Escuela Platónica, Atenas, 489 DC.
