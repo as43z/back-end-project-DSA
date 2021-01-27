@@ -1,44 +1,66 @@
 package edu.upc.eetac.dsa.models;
 
+import edu.upc.eetac.dsa.utils.RandomUtils;
+
 public class Inventory {
-    private String id;
+    private String ID;
     private int turtleQuantity;
     private int coffQuantity;
     private int redbullQuantity;
     private int pillsQuantity;
     private int calculatorQuantity;
     private int ruleQuantity;
-    private int compassQuantity;
+    private int compasQuantity;
     private int pencilQuantity;
     private int glassesQuantity;
     private int puzzleQuantity;
-    private int bookQuantityt;
+    private int bookQuantity;
     private int usbQuantity;
     private int cheatQuantity;
 
-    public Inventory(String id, int turtleQuantity, int coffQuantity, int redbullQuantity, int pillsQuantity, int calculatorQuantity, int ruleQuantity, int compassQuantity, int pencilQuantity, int glassesQuantity, int puzzleQuantity, int bookQuantityt, int usbQuantity, int cheatQuantity) {
-        this.id = id;
+    public Inventory() {
+    }
+
+    public Inventory(int turtleQuantity, int coffQuantity, int redbullQuantity, int pillsQuantity, int calculatorQuantity, int ruleQuantity, int compasQuantity, int pencilQuantity, int glassesQuantity, int puzzleQuantity, int bookQuantity, int usbQuantity, int cheatQuantity) {
+        this.ID = RandomUtils.getRandID();
         this.turtleQuantity = turtleQuantity;
         this.coffQuantity = coffQuantity;
         this.redbullQuantity = redbullQuantity;
         this.pillsQuantity = pillsQuantity;
         this.calculatorQuantity = calculatorQuantity;
         this.ruleQuantity = ruleQuantity;
-        this.compassQuantity = compassQuantity;
+        this.compasQuantity = compasQuantity;
         this.pencilQuantity = pencilQuantity;
         this.glassesQuantity = glassesQuantity;
         this.puzzleQuantity = puzzleQuantity;
-        this.bookQuantityt = bookQuantityt;
+        this.bookQuantity = bookQuantity;
         this.usbQuantity = usbQuantity;
         this.cheatQuantity = cheatQuantity;
     }
 
-    public String getId() {
-        return id;
+    public Inventory(String ID, int turtleQuantity, int coffQuantity, int redbullQuantity, int pillsQuantity, int calculatorQuantity, int ruleQuantity, int compasQuantity, int pencilQuantity, int glassesQuantity, int puzzleQuantity, int bookQuantity, int usbQuantity, int cheatQuantity) {
+        this.ID = ID;
+        this.turtleQuantity = turtleQuantity;
+        this.coffQuantity = coffQuantity;
+        this.redbullQuantity = redbullQuantity;
+        this.pillsQuantity = pillsQuantity;
+        this.calculatorQuantity = calculatorQuantity;
+        this.ruleQuantity = ruleQuantity;
+        this.compasQuantity = compasQuantity;
+        this.pencilQuantity = pencilQuantity;
+        this.glassesQuantity = glassesQuantity;
+        this.puzzleQuantity = puzzleQuantity;
+        this.bookQuantity = bookQuantity;
+        this.usbQuantity = usbQuantity;
+        this.cheatQuantity = cheatQuantity;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
     }
 
     public int getTurtleQuantity() {
@@ -89,12 +111,12 @@ public class Inventory {
         this.ruleQuantity = ruleQuantity;
     }
 
-    public int getCompassQuantity() {
-        return compassQuantity;
+    public int getCompasQuantity() {
+        return compasQuantity;
     }
 
-    public void setCompassQuantity(int compassQuantity) {
-        this.compassQuantity = compassQuantity;
+    public void setCompasQuantity(int compasQuantity) {
+        this.compasQuantity = compasQuantity;
     }
 
     public int getPencilQuantity() {
@@ -121,12 +143,12 @@ public class Inventory {
         this.puzzleQuantity = puzzleQuantity;
     }
 
-    public int getBookQuantityt() {
-        return bookQuantityt;
+    public int getBookQuantity() {
+        return bookQuantity;
     }
 
-    public void setBookQuantityt(int bookQuantityt) {
-        this.bookQuantityt = bookQuantityt;
+    public void setBookQuantity(int bookQuantity) {
+        this.bookQuantity = bookQuantity;
     }
 
     public int getUsbQuantity() {

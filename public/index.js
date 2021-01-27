@@ -22,10 +22,12 @@ $(document).ready(function(){
       success: function(x) {
         console.log(x.uname);
         console.log(x.pswrd);
-        alert("Logging in as: " + x.uname);
+        console.log(x.ID)
         sessionStorage.setItem('Nombre', x.uname);
+        sessionStorage.setItem('ID', x.ID);
         let firstName = sessionStorage.getItem('Nombre');
-        console.log("Hola, en sessionStorage está " + firstName);
+        console.log("Hola, en sessionStorage está " + firstName + "con ID" + x.ID);
+        alert("Logging in as: " + x.uname);
         window.location.replace("mainmenu.html");
       },
       error: function(xhr,resp,text){

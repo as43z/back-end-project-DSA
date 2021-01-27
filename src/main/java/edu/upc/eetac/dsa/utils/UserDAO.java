@@ -5,9 +5,10 @@ import java.util.List;
 
 public interface UserDAO
 {
-    String addUser(String ID, String uname, String pswrd, String email);
+    String addUser(User u);
     User getUser(String userID);
-    void updateUser(String ID, String uname, String pswrd, String email);
+    User updateUser(User user);
+    int updateSingleElement(String prop, Object value, String ID);
     void deleteUser(String userID);
     List<User> getUsers();
   //  List <User> getUserByDept(int deptId);

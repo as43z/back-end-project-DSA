@@ -2,8 +2,10 @@ package edu.upc.eetac.dsa.utils;
 
 import edu.upc.eetac.dsa.FactorySession;
 import edu.upc.eetac.dsa.Session;
+import edu.upc.eetac.dsa.models.Game;
 import edu.upc.eetac.dsa.models.Item;
 
+import edu.upc.eetac.dsa.models.Maps;
 import org.apache.log4j.Logger;
 
 import java.util.List;
@@ -42,6 +44,7 @@ public class ItemDAOImpl implements ItemDAO{
         catch (Exception e) {
             // LOG
             log.info("Could not proceed with the retrieving of the item.");
+            i = null;
             e.printStackTrace();
         }
         finally {
@@ -51,13 +54,39 @@ public class ItemDAOImpl implements ItemDAO{
     }
 
     @Override
-    public void updateItem(String ID, String name, String description) {
+    public void updateItem(String ID, String name, String description)
+    {
+        Item item= this.getItem(ID);
+        item.setName(name);
+        item.setDescription(description);
 
+        Session session = null;
+        try {
+            session = FactorySession.openSession();
+            session.update(item);
+        }
+        catch (Exception e) {
+            // LOG
+        }
+        finally {
+            session.close();
+        }
     }
 
     @Override
     public void deleteItem(String itemID) {
 
+        Item item= this.getItem(itemID);
+        Session session = null;
+        try {
+            session = FactorySession.openSession();
+            session.delete(Item.class);
+        }
+        catch (Exception e) {
+        }
+        finally {
+            session.close();
+        }
     }
 
     @Override

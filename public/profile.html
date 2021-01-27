@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="styles/mainmenu.css">
 
   <nav class="navbar navbar-default">
-    <div class="container">
+    <div class="container" id="header">
       <div class="navbar-header">
         <p class="navbar-brand">EETAC WARS</p>
       </div>
@@ -33,40 +33,110 @@
 
 <body>
   <div class="container inside">
-    <h1>Profile</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tincidunt lacus vitae pulvinar pulvinar. Sed ultricies nisi id enim efficitur, id placerat lacus sollicitudin. Donec ipsum neque, rutrum at aliquet eget, cursus id erat. Integer sit amet lacus suscipit, dictum nunc in, commodo ipsum. Aenean at porttitor purus, sed dignissim nunc. Fusce ut sem vel eros aliquam semper. Phasellus in ex est.
+    <h1 id="title">Profile</h1>
+    <div class="container">
+      <div class="row my-2">
+        <div class="col-lg-8 order-lg-2">
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a href="" data-target="#profile" data-toggle="tab" class="nav-link active">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a href="" data-target="#inventory" data-toggle="tab" class="nav-link">Inventory</a>
+            </li>
+            <li class="nav-item">
+              <a href="" data-target="#achievements" data-toggle="tab" class="nav-link">Achievements</a>
+            </li>
+            <li class="nav-item">
+              <a href="" data-target="#edit" data-toggle="tab" class="nav-link">Edit</a>
+            </li>
+          </ul>
+          <div class="tab-content py-4">
+            <div class="tab-pane active" id="profile">
+              <h5 class="mb-3">User Profile</h5>
+              <div class="row">
+                <div class="col-md-6">
+                  <p id="username">
+                    Username:
+                  </p>
+                  <p id="email">
+                    Email:
+                  </p>
+                  <p id="cash">
+                    Cash:
+                  </p>
+                  <p id="game">
+                    GameID:
+                  </p>
+                  <br>
+                  <p>
+                    EETAC Wars Player!
+                  </p>
 
-      Nam sit amet auctor diam. Nam augue eros, finibus vitae sodales ac, porta eu turpis. Mauris eu fermentum leo. Fusce tincidunt velit eget ligula dictum efficitur. Fusce lobortis leo a purus pulvinar, sit amet commodo metus fermentum. Aliquam ultrices, nibh vitae interdum condimentum, mauris lacus aliquam libero, tincidunt congue velit ex quis leo. Ut quis luctus orci. Ut porttitor facilisis fermentum. Nullam luctus bibendum augue at pretium. Ut vitae tincidunt est. Donec quam dolor, tincidunt in facilisis at, cursus sed ligula. Praesent egestas condimentum tortor, vitae blandit felis. Phasellus in congue mauris.
+                </div>
+                <div class="col-md-6">
+                  <h6>Recent badges</h6>
+                  <a href="#" class="badge badge-dark badge-pill">html5</a>
+                  <a href="#" class="badge badge-dark badge-pill">css</a>
+                  <a href="#" class="badge badge-dark badge-pill">js</a>
+                  <a href="#" class="badge badge-dark badge-pill">Video Games</a>
+                  <a href="#" class="badge badge-dark badge-pill">Unity</a>
+                  <a href="#" class="badge badge-dark badge-pill">EETAC</a>
+                  <a href="#" class="badge badge-dark badge-pill">DSA</a>
+                  <hr>
+                </div>
 
-      Aliquam dui magna, ullamcorper a lorem eget, egestas hendrerit enim. Integer sit amet egestas tellus, nec rutrum tellus. Fusce sit amet sem sit amet arcu suscipit pretium. Aenean eget lorem nulla. In euismod dolor neque, sit amet gravida libero maximus et. Nam aliquam malesuada faucibus. Duis tortor mi, pharetra ut lectus nec, euismod congue nulla. In venenatis ullamcorper dapibus.
+              </div>
+              <!--/row-->
+            </div>
+            <div class="tab-pane" id="inventory">
+              <table class="table table-hover table-striped" id="inventoryTable">
+              </table>
+            </div>
+            <div class="tab-pane" id="achievements">
+              <table class="table table-hover table-striped" id="achievementsTable">
 
-      Pellentesque quis euismod purus. Etiam aliquam mauris tortor, elementum fermentum tellus molestie quis. Donec a elementum mi. Integer quis posuere erat. Sed eget iaculis elit. Sed eget orci eu augue vehicula tincidunt. Nulla ac urna vitae enim vehicula euismod. Cras auctor justo orci, eu lacinia diam maximus venenatis. Quisque accumsan magna ac ultrices mattis.
+              </table>
+            </div>
+            <div class="tab-pane" id="edit">
+              <form role="form">
+                <br>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Username</label>
+                  <div class="col-lg-9" id="userForm">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                  <div class="col-lg-9" id="emailForm">
+                  </div>
+                </div>
 
-      Vestibulum aliquet blandit urna. Nunc ac vehicula nulla, quis commodo mi. Nullam vulputate aliquet velit ut scelerisque. Praesent consectetur mi et vehicula semper. Cras vel dui sem. Sed id venenatis nisi. Phasellus varius ex id nunc gravida, at cursus metus tincidunt. Integer ut tellus augue.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tincidunt lacus vitae pulvinar pulvinar. Sed ultricies nisi id enim efficitur, id placerat lacus sollicitudin. Donec ipsum neque, rutrum at aliquet eget, cursus id erat. Integer sit amet lacus suscipit, dictum nunc in, commodo ipsum. Aenean at porttitor purus, sed dignissim nunc. Fusce ut sem vel eros aliquam semper. Phasellus in ex est.
-
-      Nam sit amet auctor diam. Nam augue eros, finibus vitae sodales ac, porta eu turpis. Mauris eu fermentum leo. Fusce tincidunt velit eget ligula dictum efficitur. Fusce lobortis leo a purus pulvinar, sit amet commodo metus fermentum. Aliquam ultrices, nibh vitae interdum condimentum, mauris lacus aliquam libero, tincidunt congue velit ex quis leo. Ut quis luctus orci. Ut porttitor facilisis fermentum. Nullam luctus bibendum augue at pretium. Ut vitae tincidunt est. Donec quam dolor, tincidunt in facilisis at, cursus sed ligula. Praesent egestas condimentum tortor, vitae blandit felis. Phasellus in congue mauris.
-
-      Aliquam dui magna, ullamcorper a lorem eget, egestas hendrerit enim. Integer sit amet egestas tellus, nec rutrum tellus. Fusce sit amet sem sit amet arcu suscipit pretium. Aenean eget lorem nulla. In euismod dolor neque, sit amet gravida libero maximus et. Nam aliquam malesuada faucibus. Duis tortor mi, pharetra ut lectus nec, euismod congue nulla. In venenatis ullamcorper dapibus.
-
-      Pellentesque quis euismod purus. Etiam aliquam mauris tortor, elementum fermentum tellus molestie quis. Donec a elementum mi. Integer quis posuere erat. Sed eget iaculis elit. Sed eget orci eu augue vehicula tincidunt. Nulla ac urna vitae enim vehicula euismod. Cras auctor justo orci, eu lacinia diam maximus venenatis. Quisque accumsan magna ac ultrices mattis.
-
-      Vestibulum aliquet blandit urna. Nunc ac vehicula nulla, quis commodo mi. Nullam vulputate aliquet velit ut scelerisque. Praesent consectetur mi et vehicula semper. Cras vel dui sem. Sed id venenatis nisi. Phasellus varius ex id nunc gravida, at cursus metus tincidunt. Integer ut tellus augue.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tincidunt lacus vitae pulvinar pulvinar. Sed ultricies nisi id enim efficitur, id placerat lacus sollicitudin. Donec ipsum neque, rutrum at aliquet eget, cursus id erat. Integer sit amet lacus suscipit, dictum nunc in, commodo ipsum. Aenean at porttitor purus, sed dignissim nunc. Fusce ut sem vel eros aliquam semper. Phasellus in ex est.
-
-      Nam sit amet auctor diam. Nam augue eros, finibus vitae sodales ac, porta eu turpis. Mauris eu fermentum leo. Fusce tincidunt velit eget ligula dictum efficitur. Fusce lobortis leo a purus pulvinar, sit amet commodo metus fermentum. Aliquam ultrices, nibh vitae interdum condimentum, mauris lacus aliquam libero, tincidunt congue velit ex quis leo. Ut quis luctus orci. Ut porttitor facilisis fermentum. Nullam luctus bibendum augue at pretium. Ut vitae tincidunt est. Donec quam dolor, tincidunt in facilisis at, cursus sed ligula. Praesent egestas condimentum tortor, vitae blandit felis. Phasellus in congue mauris.
-
-      Aliquam dui magna, ullamcorper a lorem eget, egestas hendrerit enim. Integer sit amet egestas tellus, nec rutrum tellus. Fusce sit amet sem sit amet arcu suscipit pretium. Aenean eget lorem nulla. In euismod dolor neque, sit amet gravida libero maximus et. Nam aliquam malesuada faucibus. Duis tortor mi, pharetra ut lectus nec, euismod congue nulla. In venenatis ullamcorper dapibus.
-
-      Pellentesque quis euismod purus. Etiam aliquam mauris tortor, elementum fermentum tellus molestie quis. Donec a elementum mi. Integer quis posuere erat. Sed eget iaculis elit. Sed eget orci eu augue vehicula tincidunt. Nulla ac urna vitae enim vehicula euismod. Cras auctor justo orci, eu lacinia diam maximus venenatis. Quisque accumsan magna ac ultrices mattis.
-
-      Vestibulum aliquet blandit urna. Nunc ac vehicula nulla, quis commodo mi. Nullam vulputate aliquet velit ut scelerisque. Praesent consectetur mi et vehicula semper. Cras vel dui sem. Sed id venenatis nisi. Phasellus varius ex id nunc gravida, at cursus metus tincidunt. Integer ut tellus augue.
-    </p>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Password</label>
+                  <div class="col-lg-9" id="passwordForm">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Confirm password</label>
+                  <div class="col-lg-9" id="confirmPasswordForm">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label"></label>
+                  <div class="col-lg-9">
+                    <input type="button" class="btn btn-primary" value="Save Changes" id="buttonChanges">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 order-lg-1 text-center">
+          <img src="images/LogoEetacWars.png" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+        </div>
+      </div>
+    </div>
   </div>
   <div class="footer-padding">
     <div class="footer">

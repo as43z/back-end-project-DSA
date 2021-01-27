@@ -29,6 +29,22 @@ public class QueryHelper {
         return query;
     }
 
+    public static String queryUpdate(Object entity){
+        String[] fields = ObjectHelper.getFields(entity);
+        String query = "UPDATE " +
+                entity.getClass().getSimpleName() + " SET ";
+
+        query += fields[0];
+        for(int i = 1; i < fields.length; i++){
+            query +="=?, " + fields[i];
+        }
+
+        query += "=? WHERE ID=?;";
+
+        log.info("UPDATE Query was created: " + query);
+        return query;
+    }
+
     /**
      * @param c, an Object of any type.
      * @return query, a String containing the query "SELECT * FROM className WHERE I=?;"
@@ -43,6 +59,13 @@ public class QueryHelper {
     public static String querySelectAll(Class c){
         String query = "SELECT * FROM " + c.getSimpleName() + ";";
 
+        return query;
+    }
+
+    public static String queryUpdateSingleElement(Class c, String prop){
+        String query = "UPDATE " + c.getSimpleName() + " SET ";
+        //UPDATE class SET prop=? WHERE ID=?;
+        query += prop + "=? WHERE ID=?;";
         return query;
     }
 }

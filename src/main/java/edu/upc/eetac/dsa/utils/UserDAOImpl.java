@@ -10,12 +10,11 @@ public class UserDAOImpl implements UserDAO {
     private static final Logger log = Logger.getLogger(UserDAOImpl.class);
 
     @Override
-    public String addUser(String userID, String uname, String pswrd, String email) {
+    public String addUser(User u) {
         Session session = null;
 
         try {
             session = FactorySession.openSession();
-            User u = new User(userID, uname, pswrd, email);
             session.save(u);
         }
         catch (Exception e) {
@@ -24,7 +23,7 @@ public class UserDAOImpl implements UserDAO {
         finally {
             session.close();
         }
-        return userID;
+        return u.getID();
     }
 
     @Override
@@ -37,6 +36,7 @@ public class UserDAOImpl implements UserDAO {
             u = (User)session.get(User.class, userID);
         }
         catch (Exception e) {
+            u = null;
             // LOG
         }
         finally {
@@ -46,22 +46,33 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public void updateUser(String userID, String uname, String pswrd, String email) {
-        User u = this.getUser(userID);
-        u.setUname(uname);
-        u.setPswrd(pswrd);
-        u.setEmail(email);
-
+    public User updateUser(User user) {
         Session session = null;
         try {
             session = FactorySession.openSession();
-            session.update(User.class);
-        }
-        catch (Exception e) {
+            session.update(user);
+        } catch (Exception e) {
             // LOG
-        }
-        finally {
+        } finally {
             session.close();
+        }
+
+        return  user;
+    }
+
+    @Override
+    public int updateSingleElement(String prop, Object value, String ID){
+        Session session = null;
+        int solutionOk = 0;
+        try {
+            session = FactorySession.openSession();
+            session.updateSingleElement(User.class, prop, ID, value);
+            solutionOk = 1;
+        } catch (Exception e) {
+            // LOG
+        } finally {
+            session.close();
+            return solutionOk;
         }
     }
 
@@ -79,7 +90,6 @@ public class UserDAOImpl implements UserDAO {
         finally {
             session.close();
         }
-
     }
 
     @Override

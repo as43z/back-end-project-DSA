@@ -9,5 +9,6 @@ public interface Session<E> {
     Object get(Class c, String ID); //<-
     void update(Object o);
     void delete(Object o);
+    void updateSingleElement(Class c, String prop, String ID, Object value);
     List<Object> findAll(Class c); //<-
 }

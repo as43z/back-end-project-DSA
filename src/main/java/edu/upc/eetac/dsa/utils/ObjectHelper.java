@@ -39,8 +39,14 @@ public class ObjectHelper {
             //USE THE METHOD
             Method set = null;
             Class type = value.getClass();
-            set = c.getMethod(gMeth, type);
-            set.invoke(o, value);
+            if(type == Integer.class){
+                set = c.getMethod(gMeth, Integer.TYPE);
+                set.invoke(o, value);
+            } else {
+              set = c.getMethod(gMeth, type);
+              set.invoke(o, value);
+            }
+
             log.info("method executed for object " + o.getClass() + " with value " + value);
         } catch (IllegalAccessException e) {
             e.printStackTrace();
